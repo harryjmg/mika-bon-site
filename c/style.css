@@ -1,13 +1,13 @@
 /* Direction C : la grande tablée
    Palette tirée du lieu : linge basque écru, volets rouges, collines,
-   canard fumé acajou, fumée. */
+   poulet fumé doré, fumée. */
 :root {
   --lin: #F2EADA;        /* écru de nappe */
   --lin-2: #E7DBC2;      /* lin plus foncé, panneaux */
   --rouge: #B3261E;      /* volets basques */
   --rouge-fonce: #8E1C16;
   --vert: #2E5B3B;       /* collines */
-  --acajou: #7C3518;     /* peau du canard fumé */
+  --acajou: #7C3518;     /* peau du poulet fumé */
   --encre: #2A1E17;      /* brun de croûte, texte */
   --encre-2: #5A4a3f;
   --fumee: #D6D5CE;

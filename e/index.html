@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mika Bon, barbecue fumé au bois</title>
+<meta name="description" content="Mika Bon, chef, cuit sur place au feu de bois avec son smoker sur remorque. Barbecue texan pour mariages, entreprises, festivals et fêtes, jusqu'à 400 personnes.">
+<meta name="theme-color" content="#16110E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="../img/aube.jpg" fetchpriority="high">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a class="skip" href="#devis">Aller au formulaire de devis</a>
+
+<header class="bar" id="bar">
+  <a class="bar__brand" href="#top" aria-label="Mika Bon, retour au début">Mika Bon</a>
+  <div class="bar__right">
+    <!-- À REMPLACER : numéro réel -->
+    <a class="bar__tel" href="tel:+33600000000">06 00 00 00 00</a>
+    <a class="btn btn--ember btn--sm" href="#devis">Devis</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- LE PLAN-SÉQUENCE : un seul mouvement de caméra, piloté par le scroll -->
+  <section class="film" id="film" aria-label="Une journée avec Mika Bon, de l'aube à la tablée">
+    <div class="stage" id="stage">
+
+      <div class="plan" data-id="aube" data-src="../img/aube.jpg" data-w="2000" data-h="1116">
+        <div class="cam">
+          <img src="../img/aube.jpg" alt="La remorque-smoker de Mika à l'aube, dans un pré basque noyé de brume, une colonne de fumée qui monte." fetchpriority="high" decoding="async">
+          <canvas class="fog" id="fog" aria-hidden="true"></canvas>
+        </div>
+        <div class="open" id="open">
+          <h1 class="open__title">Mika Bon</h1>
+          <p class="open__sub">Barbecue texan fumé au bois, cuit sur place devant vos invités. Jusqu'à 400 personnes.</p>
+          <p class="open__hint" aria-hidden="true"><span>Descendez dans la fumée</span><i></i></p>
+        </div>
+        <p class="sub" data-in=".035" data-out=".125">Il allume le feu avant le jour.</p>
+      </div>
+
+      <div class="plan" data-id="fumee" data-src="../img/fumee.jpg" data-w="1800" data-h="1200">
+        <div class="cam"><img src="../img/fumee.jpg" alt="Le fourneau horizontal noyé dans une fumée blanche épaisse." decoding="async"></div>
+        <p class="sub" data-in=".185" data-out=".27">La fumée fait tout le travail.</p>
+      </div>
+
+      <div class="plan" data-id="poulets" data-src="../img/poulets-fumee.jpg" data-w="2000" data-h="1116">
+        <div class="cam"><img src="../img/poulets-fumee.jpg" alt="Poulets entiers dorés dans le fourneau ouvert, la fumée qui roule au-dessus." decoding="async"></div>
+        <p class="sub" data-in=".335" data-out=".41">Des poulets entiers, dorés lentement.</p>
+      </div>
+
+      <div class="plan" data-id="feu" data-src="../img/feu.jpg" data-w="2000" data-h="1116">
+        <div class="cam"><img src="../img/feu.jpg" alt="Le foyer : bûches de chêne en feu, braises et étincelles." decoding="async"></div>
+        <p class="sub" data-in=".475" data-out=".56">Quatorze heures de bois de chêne.</p>
+      </div>
+
+      <div class="plan" data-id="brisket" data-src="../img/brisket-tranche.jpg" data-w="2000" data-h="1116">
+        <div class="cam"><img src="../img/brisket-tranche.jpg" alt="Des mains en gants noirs tranchent un brisket à la croûte noire, anneau de fumée rose." decoding="async"></div>
+        <p class="sub" data-in=".635" data-out=".69">Tranché devant vos invités.</p>
+      </div>
+
+      <div class="plan" data-id="tire1" data-src="../img/tire-1.jpg" data-w="2000" data-h="1116">
+        <div class="cam"><img src="../img/tire-1.jpg" alt="Deux mains gantées tiennent une épaule fumée sur fond noir." decoding="async"></div>
+      </div>
+      <div class="plan" data-id="tire2" data-src="../img/tire-2.jpg" data-w="2000" data-h="1116">
+        <div class="cam"><img src="../img/tire-2.jpg" alt="Les mains ouvrent la pièce, la viande se sépare en fibres." decoding="async"></div>
+      </div>
+      <div class="plan" data-id="tablee" data-src="../img/tablee-soir.jpg" data-w="2000" data-h="1116">
+        <div class="cam"><img src="../img/tablee-soir.jpg" alt="Longue tablée sous une tente au coucher du soleil, guirlandes, vin, des centaines d'invités." decoding="async"></div>
+        <p class="sub" data-in=".865" data-out=".93">Jusqu'à 400 invités.</p>
+      </div>
+      <div class="plan" data-id="tire3" data-src="../img/tire-3.jpg" data-w="2000" data-h="1116">
+        <div class="cam"><img src="../img/tire-3.jpg" alt="La pièce est séparée en deux, des morceaux tombent, la vapeur monte." decoding="async"></div>
+      </div>
+
+      <div class="plan" data-id="mika" data-src="../img/mika-portrait.jpg" data-w="1800" data-h="1200" data-src-tall="../img/mika-poulets-fumee.jpg" data-w-tall="1200" data-h-tall="1800">
+        <div class="cam"><img src="../img/mika-portrait.jpg" alt="Mika Bon, tablier en jean, devant sa remorque-smoker qui fume." decoding="async"></div>
+        <div class="card" data-in=".965" data-out="2">
+          <h2 class="card__title">Derrière la fumée, un chef.</h2>
+          <p>Mika Bon a cuisiné des années comme chef privé. Il arrive avec sa cuisine sur remorque, allume le feu sur place et sert lui-même. Mariages, entreprises, festivals, fêtes de village.</p>
+          <a class="btn btn--ember" href="#devis">Demander un devis</a>
+        </div>
+      </div>
+
+      <p class="sub sub--stage" data-in=".705" data-out=".808">Ça se détache tout seul.</p>
+
+      <canvas class="veil" id="veil" aria-hidden="true"></canvas>
+      <div class="whiteout" id="whiteout" aria-hidden="true"></div>
+      <div class="flame" id="flame" aria-hidden="true"></div>
+      <canvas class="embers" id="embers" aria-hidden="true"></canvas>
+      <div class="flash" id="flash" aria-hidden="true"></div>
+      <div class="vignette" aria-hidden="true"></div>
+
+      <div class="clock" aria-hidden="true">
+        <span class="clock__time" id="clock-time">05:40</span>
+        <span class="clock__scene" id="clock-scene">L'aube</span>
+        <span class="clock__line"><i id="clock-bar"></i></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- LA JOURNÉE EN VRAI : bande de photos qui défile à l'horizontale -->
+  <section class="reel" id="reel" aria-labelledby="reel-title">
+    <div class="reel__pin">
+      <div class="reel__head">
+        <h2 class="h2" id="reel-title">La même journée, en vraies photos</h2>
+        <p>Photos prises pendant un événement de Mika, dans un pré du Pays basque.</p><!-- À CONFIRMER : lieu -->
+      </div>
+      <div class="reel__track" id="reel-track">
+        <figure><img src="../img/mika-presente.jpg" alt="Mika ouvre le couvercle du fourneau et présente les grilles de viande." loading="lazy" width="1800" height="1200"><figcaption>Le couvercle s'ouvre.</figcaption></figure>
+        <figure><img src="../img/grilles.jpg" alt="Trois étages de grilles chargées de pièces de viande assaisonnées." loading="lazy" width="1800" height="1200"><figcaption>Trois étages de grilles.</figcaption></figure>
+        <figure><img src="../img/table-viandes.jpg" alt="Longue table couverte de pièces de viande avant cuisson, tentes au fond." loading="lazy" width="1800" height="1200"><figcaption>Avant la cuisson.</figcaption></figure>
+        <figure><img src="../img/dindes-rack.jpg" alt="L'armoire verticale ouverte, trois étages de volailles fumées." loading="lazy" width="1800" height="1200"><figcaption>L'armoire à volailles.</figcaption></figure>
+        <figure><img src="../img/poulets.jpg" alt="Poulets fumés à la peau dorée sur la grille." loading="lazy" width="1800" height="1200"><figcaption>Poulets fumés.</figcaption></figure>
+        <figure><img src="../img/pulled-mains.jpg" alt="Mains gantées qui effilochent une pièce fumée." loading="lazy" width="1800" height="1200"><figcaption>Effiloché à la main.</figcaption></figure>
+        <figure><img src="../img/decoupe.jpg" alt="Découpe au couteau sur une planche bleue." loading="lazy" width="1800" height="1200"><figcaption>La découpe.</figcaption></figure>
+        <figure><img src="../img/mika-cri.jpg" alt="Mika crie de joie devant la machine ouverte." loading="lazy" width="1800" height="1200"><figcaption>Prêt.</figcaption></figure>
+        <figure><img src="../img/service.jpg" alt="Service au buffet, les invités tendent leur assiette." loading="lazy" width="1800" height="1200"><figcaption>Le service.</figcaption></figure>
+        <figure><img src="../img/tablee.jpg" alt="Longue tablée de convives sous une grande tente." loading="lazy" width="1800" height="1200"><figcaption>À table.</figcaption></figure>
+        <figure><img src="../img/paysage.jpg" alt="Tentes, vignes et maison basque blanche sous un ciel bleu." loading="lazy" width="1800" height="1200"><figcaption>Le pré, l'après-midi.</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEVIS -->
+  <section class="quote" id="devis" aria-labelledby="quote-title">
+    <div class="quote__inner">
+      <div class="quote__head">
+        <h2 class="h2" id="quote-title">Votre date, votre pré, vos invités.</h2>
+        <p>Quatre informations suffisent pour un premier prix. Réponse sous 48 h.</p>
+        <ul class="quote__direct">
+          <!-- À REMPLACER : coordonnées réelles -->
+          <li><a href="tel:+33600000000">06 00 00 00 00</a></li>
+          <li><a href="https://wa.me/33600000000" target="_blank" rel="noopener">WhatsApp</a></li>
+          <li><a href="mailto:contact@mikabon.fr">contact@mikabon.fr</a></li>
+          <li><a href="https://instagram.com/mikabon" target="_blank" rel="noopener">@mikabon</a></li>
+        </ul>
+      </div>
+      <form class="form" id="quote-form" novalidate>
+        <div class="field field--half">
+          <label for="f-type">Type d'événement</label>
+          <select id="f-type" name="type" required>
+            <option value="">Choisir</option>
+            <option>Mariage</option>
+            <option>Entreprise</option>
+            <option>Festival ou fête de village</option>
+            <option>Anniversaire ou fête privée</option>
+            <option>Association</option>
+            <option>Autre</option>
+          </select>
+        </div>
+        <div class="field field--half">
+          <label for="f-date">Date</label>
+          <input id="f-date" name="date" type="date" required>
+        </div>
+        <div class="field field--half">
+          <label for="f-lieu">Lieu</label>
+          <input id="f-lieu" name="lieu" type="text" placeholder="Commune ou salle" autocomplete="address-level2" required>
+        </div>
+        <div class="field field--half">
+          <label for="f-nb">Nombre d'invités</label>
+          <input id="f-nb" name="invites" type="number" min="10" max="2000" inputmode="numeric" placeholder="Jusqu'à 400" required>
+        </div>
+        <div class="field field--half">
+          <label for="f-nom">Votre nom</label>
+          <input id="f-nom" name="nom" type="text" autocomplete="name" required>
+        </div>
+        <div class="field field--half">
+          <label for="f-tel">Téléphone ou e-mail</label>
+          <input id="f-tel" name="contact" type="text" autocomplete="tel" required>
+        </div>
+        <div class="field">
+          <label for="f-msg">Un détail à ajouter <span class="opt">(facultatif)</span></label>
+          <textarea id="f-msg" name="message" rows="3" placeholder="Budget, végétariens, allergies, buffet ou service à table..."></textarea>
+        </div>
+        <p class="form__error" id="form-error" role="alert" hidden></p>
+        <div class="form__actions">
+          <button class="btn btn--ember" type="submit" data-channel="whatsapp">Envoyer par WhatsApp</button>
+          <button class="btn btn--ghost" type="submit" data-channel="mail">Envoyer par e-mail</button>
+        </div>
+        <p class="form__note">Le bouton ouvre WhatsApp ou votre messagerie avec la demande déjà écrite. Il ne reste qu'à l'envoyer.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="faq" aria-labelledby="faq-title">
+    <h2 class="h2" id="faq-title">Questions pratiques</h2>
+    <div class="faq__list">
+      <details>
+        <summary>De quoi avez-vous besoin sur place ?</summary>
+        <p>Une place plane et stable pour la remorque, accessible en voiture. Le smoker cuit au bois. Un point d'eau et une prise à proximité facilitent le service : on vérifie ensemble au moment du devis.</p>
+      </details>
+      <details>
+        <summary>La fumée va-t-elle gêner les invités ?</summary>
+        <p>La remorque se place à l'écart des tables, en tenant compte du vent. On sent le bois de loin, on ne mange pas dans la fumée.</p>
+      </details>
+      <details>
+        <summary>Et s'il pleut ?</summary>
+        <p>Le smoker cuit sous la pluie. Pour le service, il faut un abri : tente, barnum ou préau. On le prévoit dans le devis.</p>
+      </details>
+      <details>
+        <summary>Végétariens, allergies ?</summary>
+        <p>Dites-le dès la demande. Mika prévoit des plats sans viande et signale les allergènes de chaque préparation.</p>
+      </details>
+      <details>
+        <summary>Combien ça coûte ?</summary>
+        <p>C'est sur devis. Le prix dépend du nombre d'invités, du menu et du type de service. Vous recevez une réponse sous 48 h.</p>
+      </details>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <p class="foot__mark" aria-hidden="true">Mika Bon</p>
+  <div class="foot__row">
+    <p>Barbecue texan fumé au bois. Traiteur pour événements jusqu'à 400 personnes.<br><!-- À CONFIRMER -->Pays basque et tout le Sud-Ouest.</p>
+    <!-- À REMPLACER : coordonnées réelles -->
+    <p><a href="tel:+33600000000">06 00 00 00 00</a><br><a href="mailto:contact@mikabon.fr">contact@mikabon.fr</a><br><a href="https://instagram.com/mikabon" target="_blank" rel="noopener">@mikabon</a></p>
+    <p><a class="foot__dirs" href="../index.html">Voir les autres directions</a></p>
+  </div>
+</footer>
+
+
+<script src="main.js"></script>
+</body>
+</html>

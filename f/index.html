@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mika Bon, la bande-annonce</title>
+<meta name="description" content="Mika Bon, ancien chef privé, cuit sur place au feu de bois avec son smoker sur remorque. Barbecue texan pour mariages, entreprises et fêtes, jusqu'à 400 invités.">
+<meta name="theme-color" content="#000000">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="../img/nuit.jpg">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a class="skip" href="#seance">Aller au formulaire de devis</a>
+
+<!-- Bandes noires du format cinéma : elles portent toute l'interface -->
+<header class="bar bar--top" id="bar-top">
+  <a class="bar__brand" href="#top" aria-label="Mika Bon, revenir au début">Mika Bon</a>
+  <a class="bar__dirs" href="../index.html">Voir les autres directions</a>
+  <a class="bar__cta" href="#seance">Devis</a>
+</header>
+
+<nav class="bar bar--bottom" id="bar-bottom" aria-label="Chapitres">
+  <div class="player">
+    <span class="player__chapter" id="player-chapter" aria-live="polite">Ouverture</span>
+    <div class="player__track" id="player-track">
+      <span class="player__played" id="player-played"></span>
+      <span class="player__head" id="player-head"></span>
+      <ol class="player__marks" id="player-marks"></ol>
+    </div>
+    <span class="player__time" id="player-time">00:00 / 02:30</span>
+  </div>
+</nav>
+
+<main id="top">
+
+  <!-- LA BOBINE : chaque .seg est un plan ou un carton. data-dur = longueur de scroll en vh -->
+  <section class="reel" id="reel" aria-label="Bande-annonce">
+    <div class="stage">
+      <div class="frame" id="frame">
+
+        <!-- 0. Ouverture -->
+        <div class="seg shot seg--intro" data-dur="110" data-chapter="Ouverture" data-embers="0.5" data-smoke="0.55">
+          <img src="../img/nuit.jpg" alt="La remorque smoker dans un pré, de nuit. Le foyer rougeoie, Mika de dos tient une bûche." style="--pos: 34% 62%" fetchpriority="high">
+          <div class="intro">
+            <!-- À CONFIRMER : zone (Pays basque) -->
+            <p class="intro__slug" id="intro-slug" data-text="Pays basque. 4 heures du matin.">Pays basque. 4 heures du matin.</p>
+            <h1 class="intro__title"><span class="intro__name">Mika Bon</span><span class="intro__tag">Le barbecue texan, au feu de bois, pour 400 invités.</span></h1>
+            <p class="intro__cue">Faites défiler pour lancer la bande-annonce</p>
+          </div>
+        </div>
+
+        <div class="seg card" data-dur="55" data-chapter="Le feu"><p class="card__text">Le feu démarre avant tout le monde.</p></div>
+
+        <div class="seg shot" data-dur="75" data-embers="1" data-smoke="0.35">
+          <img src="../img/feu.jpg" alt="Bûches qui brûlent dans le foyer, braises et étincelles." style="--pos: 55% 60%">
+        </div>
+
+        <div class="seg shot" data-dur="70" data-smoke="0.6">
+          <img src="../img/fumee.jpg" alt="Le fourneau horizontal noyé dans une fumée blanche épaisse." class="grade-day" style="--pos: 38% 50%">
+          <p class="sub">Ensuite, la fumée travaille. Pendant des heures.</p>
+        </div>
+
+        <div class="seg shot" data-dur="55" data-smoke="0.45">
+          <img src="../img/poulets-fumee.jpg" alt="Poulets entiers dorés dans le fourneau ouvert, la fumée roule au-dessus." style="--pos: 62% 70%">
+          <p class="sub">Poulets entiers, fumés au bois.</p>
+        </div>
+
+        <div class="seg card" data-dur="50" data-chapter="Le chef"><p class="card__text">Derrière le feu, un cuisinier.</p></div>
+
+        <div class="seg shot" data-dur="80" data-smoke="0.3">
+          <img src="../img/mika-portrait.jpg" alt="Mika Bon en tablier, regard au loin, le smoker fume derrière lui." class="grade-day" style="--pos: 18% 35%">
+          <p class="shot__carton card__text">Ancien chef privé.</p>
+        </div>
+
+        <div class="seg card" data-dur="40" data-chapter="La viande"><p class="card__text">Vient l'heure d'ouvrir.</p></div>
+
+        <div class="seg shot" data-dur="26" data-cut="soft">
+          <img src="../img/alu-1.jpg" alt="Une pièce de viande à la croûte noire dans une feuille d'aluminium ouverte." class="grade-alu" style="--pos: 50% 55%">
+        </div>
+        <div class="seg shot" data-dur="22" data-cut="soft">
+          <img src="../img/alu-2.jpg" alt="Le couteau entre dans la pièce, la viande s'ouvre." class="grade-alu" style="--pos: 45% 55%">
+        </div>
+        <div class="seg shot" data-dur="20" data-cut="soft">
+          <img src="../img/alu-3.jpg" alt="La viande s'ouvre encore, une main gantée la tient." class="grade-alu" style="--pos: 50% 55%">
+        </div>
+        <div class="seg shot" data-dur="26" data-cut="soft">
+          <img src="../img/alu-4.jpg" alt="Des gants orange tiennent la pièce pendant la découpe." class="grade-alu" style="--pos: 40% 55%">
+        </div>
+
+        <div class="seg shot seg--punch" data-dur="18" data-cut="flash" data-embers="0.6" data-smoke="0.3">
+          <img src="../img/tire-1.jpg" alt="Deux mains gantées tiennent une épaule fumée sur fond noir." style="--pos: 58% 50%">
+        </div>
+        <div class="seg shot seg--punch" data-dur="16" data-cut="flash" data-embers="0.7" data-smoke="0.35">
+          <img src="../img/tire-2.jpg" alt="" style="--pos: 58% 50%">
+        </div>
+        <div class="seg shot seg--punch" data-dur="24" data-cut="flash" data-embers="0.8" data-smoke="0.5">
+          <img src="../img/tire-3.jpg" alt="Les mains séparent la viande, des morceaux tombent dans la vapeur." style="--pos: 55% 50%">
+        </div>
+
+        <div class="seg card" data-dur="32"><p class="card__text">Ça se détache tout seul.</p></div>
+
+        <div class="seg shot" data-dur="60" data-smoke="0.4">
+          <img src="../img/brisket-tranche.jpg" alt="Des mains en gants noirs tranchent un brisket à la croûte noire, anneau de fumée rose." style="--pos: 62% 60%">
+          <p class="sub">Jusqu'à 14 heures de bois pour un brisket.</p>
+        </div>
+
+        <div class="seg shot" data-dur="45" data-cut="flash" data-smoke="0.2">
+          <img src="../img/mika-cri.jpg" alt="Mika crie de joie, poing serré, devant le fourneau ouvert plein de viande." class="grade-day" style="--pos: 34% 45%">
+          <p class="sub sub--sdh">[cri de joie]</p>
+        </div>
+
+        <div class="seg card" data-dur="30" data-chapter="La fête"><p class="card__text">Et puis tout le monde arrive.</p></div>
+
+        <div class="seg shot" data-dur="28">
+          <img src="../img/foule.jpg" alt="Tentes blanches et longue file d'invités, une maison basque au fond." class="grade-day grade-hot" style="--pos: 40% 50%">
+        </div>
+
+        <div class="seg shot" data-dur="55" data-smoke="0.2">
+          <img src="../img/tablee-soir.jpg" alt="Une longue tablée sous une tente au coucher du soleil, guirlandes et centaines d'invités." style="--pos: 50% 60%">
+        </div>
+
+        <div class="seg card card--big" data-dur="55"><p class="card__text">Jusqu'à 400 invités.</p></div>
+
+        <div class="seg card seg--end" data-dur="90" data-chapter="Fin" data-smoke="0.35" data-embers="0.25">
+          <div class="end">
+            <p class="end__name">Mika Bon</p>
+            <p class="end__tag">Prochainement à votre événement.</p>
+            <a class="btn btn--fire" href="#seance">Réserver la séance</a>
+          </div>
+        </div>
+
+        <canvas class="fx" id="fx" aria-hidden="true"></canvas>
+        <div class="flash" id="flash" aria-hidden="true"></div>
+        <div class="vignette" aria-hidden="true"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LE GÉNÉRIQUE : la partie pratique -->
+  <section class="credits" id="seance" aria-labelledby="seance-title" data-chapter="Réserver">
+
+    <div class="credits__block">
+      <h2 class="credits__title" id="seance-title">Réservez la séance</h2>
+      <p class="credits__lede">Quelques informations suffisent pour un premier prix. Réponse sous 48 h.</p>
+
+      <form class="form" id="quote-form" novalidate>
+        <div class="field">
+          <label for="f-type">Type d'événement</label>
+          <select id="f-type" name="type" required>
+            <option value="">Choisir</option>
+            <option>Mariage</option>
+            <option>Entreprise</option>
+            <option>Festival ou fête de village</option>
+            <option>Anniversaire ou fête privée</option>
+            <option>Association</option>
+            <option>Autre</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-date">Date</label>
+          <input id="f-date" name="date" type="date" required>
+        </div>
+        <div class="field">
+          <label for="f-lieu">Lieu</label>
+          <input id="f-lieu" name="lieu" type="text" placeholder="Commune ou salle" autocomplete="address-level2" required>
+        </div>
+        <div class="field">
+          <label for="f-nb">Nombre d'invités</label>
+          <input id="f-nb" name="invites" type="number" min="10" max="2000" inputmode="numeric" placeholder="Jusqu'à 400" required>
+        </div>
+        <div class="field">
+          <label for="f-nom">Votre nom</label>
+          <input id="f-nom" name="nom" type="text" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label for="f-tel">Téléphone ou e-mail</label>
+          <input id="f-tel" name="contact" type="text" autocomplete="tel" required>
+        </div>
+        <div class="field field--full">
+          <label for="f-budget">Budget par personne <span class="opt">(facultatif)</span></label>
+          <select id="f-budget" name="budget">
+            <option value="">Je ne sais pas encore</option>
+            <option>Moins de 30 €</option>
+            <option>30 à 50 €</option>
+            <option>50 à 80 €</option>
+            <option>Plus de 80 €</option>
+          </select>
+        </div>
+        <div class="field field--full">
+          <label for="f-msg">Un détail à ajouter <span class="opt">(facultatif)</span></label>
+          <textarea id="f-msg" name="message" rows="3" placeholder="Végétariens, allergies, buffet ou service à l'assiette"></textarea>
+        </div>
+        <p class="form__error" id="form-error" role="alert" hidden></p>
+        <div class="form__actions">
+          <button class="btn btn--fire" type="submit" data-channel="whatsapp">Envoyer par WhatsApp</button>
+          <button class="btn btn--ghost" type="submit" data-channel="mail">Envoyer par e-mail</button>
+        </div>
+        <p class="form__note">Le bouton ouvre WhatsApp ou votre messagerie avec la demande déjà écrite. Il ne reste qu'à l'envoyer.</p>
+      </form>
+    </div>
+
+    <div class="credits__block">
+      <h2 class="credits__head">Distribution</h2>
+      <dl class="roll">
+        <div><dt>Chef</dt><dd>Michael Bon, dit Mika</dd></div>
+        <div><dt>Avant</dt><dd>Chef privé pendant des années</dd></div>
+        <div><dt>La machine</dt><dd>Smoker sur remorque, construit sur mesure</dd></div>
+        <div><dt>Cuisson</dt><dd>Au feu de bois, lente, sur place</dd></div>
+        <div><dt>Capacité</dt><dd>Jusqu'à 400 invités</dd></div>
+        <!-- À CONFIRMER : zone d'intervention -->
+        <div><dt>Lieu de tournage</dt><dd>Pays basque et tout le Sud-Ouest</dd></div>
+      </dl>
+    </div>
+
+    <div class="credits__block">
+      <h2 class="credits__head">Questions pratiques</h2>
+      <div class="faq">
+        <details>
+          <summary>De quoi avez-vous besoin sur place ?</summary>
+          <p>Une place plane et stable pour la remorque, accessible en voiture. Le smoker cuit au bois. Un point d'eau et une prise à proximité facilitent le service : on vérifie ensemble au moment du devis.</p>
+        </details>
+        <details>
+          <summary>La fumée va-t-elle gêner les invités ?</summary>
+          <p>La remorque se place à l'écart des tables, en tenant compte du vent. On sent le bois de loin, on ne mange pas dans la fumée.</p>
+        </details>
+        <details>
+          <summary>Et s'il pleut ?</summary>
+          <p>Le smoker cuit sous la pluie. Pour le service, il faut un abri : tente, barnum ou préau. On le prévoit dans le devis.</p>
+        </details>
+        <details>
+          <summary>Végétariens, allergies ?</summary>
+          <p>Dites-le dès la demande. Mika prévoit des plats sans viande et signale les allergènes de chaque préparation.</p>
+        </details>
+        <details>
+          <summary>Combien ça coûte ?</summary>
+          <p>C'est sur devis. Le prix dépend du nombre d'invités, du menu et du type de service. Vous recevez une réponse sous 48 h.</p>
+        </details>
+      </div>
+    </div>
+
+    <div class="credits__block">
+      <h2 class="credits__head">Contacts</h2>
+      <!-- À REMPLACER : coordonnées réelles -->
+      <dl class="roll">
+        <div><dt>Téléphone</dt><dd><a href="tel:+33600000000">06 00 00 00 00</a></dd></div>
+        <div><dt>WhatsApp</dt><dd><a href="https://wa.me/33600000000?text=Bonjour%20Mika%2C%20je%20pr%C3%A9pare%20un%20%C3%A9v%C3%A9nement." target="_blank" rel="noopener">Écrire à Mika</a></dd></div>
+        <div><dt>E-mail</dt><dd><a href="mailto:contact@mikabon.fr">contact@mikabon.fr</a></dd></div>
+        <div><dt>Instagram</dt><dd><a href="https://instagram.com/mikabon" target="_blank" rel="noopener">@mikabon</a></dd></div>
+      </dl>
+    </div>
+
+    <div class="credits__block credits__block--end">
+      <p class="credits__wink">Aucune viande n'a été pressée pendant ce tournage.</p>
+      <p class="credits__fine">Photos prises lors d'un événement de Mika. Les plans de nuit, de feu, de tablée au soir et les gros plans de viande sur fond noir sont des images générées à partir des vraies photos.</p>
+      <p class="credits__fine"><a href="../index.html">Voir les autres directions</a></p>
+    </div>
+  </section>
+
+</main>
+
+<div class="grain" aria-hidden="true"></div>
+
+<script src="main.js"></script>
+</body>
+</html>

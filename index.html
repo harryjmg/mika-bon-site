@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Mika Bon, trois directions</title>
+<title>Mika Bon, directions</title>
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,15 +24,39 @@
   h2 { font: 400 34px/1.1 "Instrument Serif", Georgia, serif; margin: 18px 0 6px; }
   .dir p { margin: 0; color: var(--mute); }
   .go { display: inline-block; margin-top: 12px; font-weight: 600; border-bottom: 1px solid currentColor; }
+  .sub { font: 400 30px/1.1 "Instrument Serif", Georgia, serif; margin: 88px 0 24px; color: var(--mute); }
+  .grid--small h2 { font-size: 24px; }
+  .grid--small .dir { opacity: .8; }
   footer { margin-top: 72px; color: var(--mute); font-size: 15px; max-width: 62ch; }
   @media (max-width: 900px) { .grid { grid-template-columns: 1fr; gap: 44px; } }
 </style>
 </head>
 <body>
 <main>
-  <h1>Mika Bon,<br>trois directions</h1>
-  <p class="intro">Trois façons de présenter le même métier, avec les mêmes photos. Ouvrez-les, scrollez jusqu'au brisket, et dites laquelle vous ressemble. On peut aussi mélanger : le ton d'une, les couleurs d'une autre.</p>
+  <h1>Mika Bon,<br>en version cinéma</h1>
+  <p class="intro">Trois pages qui se regardent comme un film, du feu de la nuit à la grande tablée du soir. Ouvrez-les et scrollez lentement, avec le son du feu dans la tête.</p>
   <div class="grid">
+    <a class="dir" href="d/">
+      <div class="shot"><img src="shots/d.jpg" alt="Aperçu de la direction La nuit d'avant"></div>
+      <h2>D. La nuit d'avant</h2>
+      <p>Une journée de fête racontée heure par heure depuis le smoker, de 4 heures du matin au dîner.</p>
+      <span class="go">Ouvrir la direction D</span>
+    </a>
+    <a class="dir" href="e/">
+      <div class="shot"><img src="shots/e.jpg" alt="Aperçu de la direction Plan-séquence"></div>
+      <h2>E. Plan-séquence</h2>
+      <p>Un seul mouvement de caméra : on plonge dans la machine, dans le feu, jusqu'à la viande.</p>
+      <span class="go">Ouvrir la direction E</span>
+    </a>
+    <a class="dir" href="f/">
+      <div class="shot"><img src="shots/f.jpg" alt="Aperçu de la direction La bande-annonce"></div>
+      <h2>F. La bande-annonce</h2>
+      <p>Bandes noires, cartons de film, montage qui s'accélère. Le générique de fin sert à réserver.</p>
+      <span class="go">Ouvrir la direction F</span>
+    </a>
+  </div>
+  <h3 class="sub">Les premières pistes</h3>
+  <div class="grid grid--small">
     <a class="dir" href="a/">
       <div class="shot"><img src="shots/a.jpg" alt="Aperçu de la direction Fumée"></div>
       <h2>A. Fumée</h2>
@@ -52,7 +76,7 @@
       <span class="go">Ouvrir la direction C</span>
     </a>
   </div>
-  <footer>Version de travail, non référencée. Les coordonnées, la ville et les tarifs sont à compléter. Photos prises lors d'un événement de Mika, retouchées ; l'image du brisket qui se déchire est générée.</footer>
+  <footer>Version de travail, non référencée. Les coordonnées, la ville et les tarifs sont à compléter. Photos prises lors d'un événement de Mika, retouchées ; certains plans (la nuit, le feu, l'aube, la tablée du soir, le brisket tranché, la viande qu'on déchire) sont générés à partir des vraies photos.</footer>
 </main>
 </body>
 </html>
