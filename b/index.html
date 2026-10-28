@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mika Bon, barbecue texan fumé au bois</title>
+<meta name="description" content="Barbecue texan cuit au bois sur place, dans un smoker sur remorque construit sur mesure. Un ancien chef privé aux commandes, jusqu'à 400 couverts. Devis sous 48 h.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@600;800;900&family=Archivo:wdth,wght@62..125,400..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a class="skip" href="#devis">Aller au formulaire de devis</a>
+
+<header class="bar">
+  <a class="bar__logo" href="#top" aria-label="Mika Bon, retour en haut">Mika Bon</a>
+  <nav class="bar__nav" aria-label="Sections">
+    <a href="#machine">La machine</a>
+    <a href="#chef">Le chef</a>
+    <a href="#evenements">Événements</a>
+    <a href="#faq">Questions</a>
+  </nav>
+  <!-- À REMPLACER : numéro réel -->
+  <a class="bar__tel" href="tel:+33600000000">06 00 00 00 00</a>
+  <a class="btn btn--orange bar__cta" href="#devis">Demander un devis</a>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero" aria-labelledby="hero-title">
+  <img class="hero__img" src="../img/remorque.jpg" alt="Le smoker de Mika Bon sur sa remorque double essieu, vu de l'arrière : armoire de fumage, fourneau à trois couvercles qui fume, plan de travail en bois, dans un pré." fetchpriority="high">
+  <div class="hero__shade" aria-hidden="true"></div>
+  <div class="hero__body">
+    <p class="hero__lead">Barbecue texan cuit au bois, sur place, dans une machine construite sur mesure. Un ancien chef privé aux commandes.</p>
+    <div class="hero__actions">
+      <a class="btn btn--orange" href="#devis">Demander un devis</a>
+      <a class="btn btn--ghost" href="#machine">Voir la machine</a>
+    </div>
+  </div>
+  <div class="plate" aria-label="Jusqu'à 400 couverts">
+    <span class="plate__num">400</span>
+    <span class="plate__txt">couverts<br>par événement</span>
+  </div>
+  <h1 id="hero-title" class="hero__name"><span>Mika</span> <span>Bon</span></h1>
+</section>
+
+<!-- FICHE TECHNIQUE -->
+<section class="spec" id="machine" aria-labelledby="spec-title">
+  <div class="spec__head">
+    <h2 id="spec-title" class="h-stencil">La machine</h2>
+    <p class="spec__intro">Une remorque, un fumoir, un fourneau, un foyer. Tout est soudé sur le même châssis, tout cuit en même temps. Mika arrive avec sa cuisine et repart avec. Vous n'avez rien à installer.</p>
+  </div>
+
+  <div class="spec__plan" data-spec>
+    <div class="spec__frame">
+      <img src="../img/machine.jpg" alt="Le smoker en profil, fumée blanche qui sort de l'armoire verticale et des trois couvercles, Mika en casquette jaune à côté." loading="lazy" width="2200" height="1467">
+      <svg class="spec__svg" aria-hidden="true"></svg>
+    </div>
+    <ol class="spec__labels">
+      <li data-x="20" data-y="14" data-side="l"><b>Cheminées</b><span>Elles tirent la fumée à travers toute la cuisson.</span></li>
+      <li data-x="23" data-y="38" data-side="l"><b>Armoire verticale de fumage</b><span>Étagères sur plusieurs niveaux. Canards et volailles entières, empilés.</span></li>
+      <li data-x="21" data-y="63" data-side="l"><b>Foyer</b><span>En bas. Du bois, rien d'autre. <!-- À CONFIRMER : position exacte du foyer --></span></li>
+      <li data-x="52" data-y="47" data-side="r"><b>Fourneau horizontal, trois portes</b><span>Trois chambres, trois étages de grilles. Brisket, épaules, porc.</span></li>
+      <li data-x="62" data-y="64" data-side="r"><b>Plan de travail en bois</b><span>Toute la longueur. On y découpe, on y effiloche, devant vos invités.</span></li>
+      <li data-x="44" data-y="86" data-side="r"><b>Double essieu</b><span>Elle se tracte jusqu'à votre pré, votre cour ou votre parking.</span></li>
+    </ol>
+  </div>
+
+  <p class="spec__cap">Capacité : jusqu'à 400 couverts. Construite sur mesure.</p>
+</section>
+
+<!-- SIGNATURE : LE DÉCHIREMENT -->
+<section class="tear" aria-labelledby="tear-title" data-tear>
+  <div class="tear__stick">
+    <div class="tear__stage">
+      <picture class="tear__img" data-i="0">
+        <source media="(max-width: 700px)" srcset="../img/dechire-1-carre.jpg">
+        <img src="../img/dechire-1.jpg" alt="Un brisket entier, croûte noire, posé sur papier boucher rose." loading="lazy">
+      </picture>
+      <picture class="tear__img" data-i="1">
+        <source media="(max-width: 700px)" srcset="../img/dechire-2-carre.jpg">
+        <img src="../img/dechire-2.jpg" alt="Le brisket se déchire au milieu, les fibres s'étirent, le jus coule." loading="lazy">
+      </picture>
+      <picture class="tear__img" data-i="2">
+        <source media="(max-width: 700px)" srcset="../img/dechire-3-carre.jpg">
+        <img src="../img/dechire-3.jpg" alt="Le brisket ouvert en deux, la viande effilochée tombée sur le papier, de la vapeur." loading="lazy">
+      </picture>
+      <canvas class="tear__smoke" aria-hidden="true"></canvas>
+      <div class="tear__vignette" aria-hidden="true"></div>
+    </div>
+
+    <div class="tear__hud" aria-hidden="true">
+      <i class="c c--tl"></i><i class="c c--tr"></i><i class="c c--bl"></i><i class="c c--br"></i>
+      <div class="tear__cross"></div>
+      <div class="tear__gauge">
+        <div class="tear__ticks"></div>
+        <div class="tear__needle"></div>
+      </div>
+    </div>
+
+    <div class="tear__clock" aria-hidden="true"><span data-hours>00</span><small>h</small></div>
+    <p class="tear__clocklbl" aria-hidden="true">temps de cuisson</p>
+
+    <h2 id="tear-title" class="sr-only">Jusqu'à 14 heures de bois, et la viande se détache toute seule.</h2>
+    <div class="tear__lines" aria-hidden="true">
+      <p data-step="0">On allume le feu.<br>On ne le quitte plus.</p>
+      <p data-step="1">Jusqu'à 14 heures<br>de bois.</p>
+      <p data-step="2">Ça se détache<br>tout seul.</p>
+    </div>
+  </div>
+</section>
+
+<!-- LE CHEF -->
+<section class="chef" id="chef" aria-labelledby="chef-title">
+  <figure class="chef__photo">
+    <img src="../img/mika-presente.jpg" alt="Mika ouvre le couvercle du fourneau et montre trois étages de viande assaisonnée, gant orange au poing." loading="lazy" width="2200" height="1467">
+  </figure>
+  <div class="chef__text">
+    <h2 id="chef-title" class="h-stencil h-stencil--dark">Le pilote</h2>
+    <p class="chef__big">Michael Bon, dit Mika. Des années comme chef privé avant de construire sa machine.</p>
+    <p>Il a cuisiné chez des particuliers, à table, pour des gens qui remarquent tout. Il garde la même exigence devant un smoker de plusieurs mètres.</p>
+    <p>Concrètement : les sauces sont faites maison, les accompagnements aussi. Un gratin dauphinois, une sauce verte aux herbes, un pimenté. La viande arrive dans une vraie assiette.</p>
+    <p class="chef__note">Les gants orange, c'est pour sortir les grilles brûlantes. Ils finissent la journée noirs de suie.</p>
+  </div>
+</section>
+
+<!-- CE QUI SORT DE LA MACHINE -->
+<section class="out" aria-labelledby="out-title">
+  <h2 id="out-title" class="h-stencil">Ce qui sort de la machine</h2>
+  <p class="out__intro">Photos prises pendant un vrai service. Aucune image de banque.</p>
+  <div class="out__grid">
+    <figure class="o o--a"><img src="../img/canards.jpg" alt="Canards entiers fumés et laqués, couleur acajou, sur une grille." loading="lazy"><figcaption>Canards entiers, fumés puis laqués</figcaption></figure>
+    <figure class="o o--b"><img src="../img/dindes-rack.jpg" alt="L'armoire verticale ouverte, trois étages de volailles dorées." loading="lazy"><figcaption>Volailles entières, dans l'armoire</figcaption></figure>
+    <figure class="o o--c"><img src="../img/grilles.jpg" alt="Trois étages de grilles chargées de pièces de viande crue assaisonnée." loading="lazy"><figcaption>Porc et bœuf, avant le feu</figcaption></figure>
+    <figure class="o o--d"><img src="../img/pulled-mains.jpg" alt="Mains gantées qui effilochent une pièce de viande fumée." loading="lazy"><figcaption>Effiloché à la main</figcaption></figure>
+    <figure class="o o--e"><img src="../img/brisket-alu.jpg" alt="Un brisket noir dans sa feuille d'aluminium ouverte." loading="lazy"><figcaption>Brisket, repos dans l'alu</figcaption></figure>
+    <figure class="o o--f"><img src="../img/assiette.jpg" alt="Assiette servie : viande fumée tranchée, gratin dauphinois, sauce verte." loading="lazy"><figcaption>L'assiette : viande fumée, gratin, sauce verte</figcaption></figure>
+  </div>
+</section>
+
+<!-- ÉVÉNEMENTS -->
+<section class="events" id="evenements" aria-labelledby="ev-title">
+  <div class="events__img">
+    <img src="../img/tablee.jpg" alt="Sous une grande tente, une longue tablée de convives des deux côtés." loading="lazy">
+  </div>
+  <div class="events__body">
+    <h2 id="ev-title" class="h-stencil h-stencil--dark">Pour qui la machine se déplace</h2>
+    <!-- À CONFIRMER : zone d'intervention -->
+    <p class="events__zone">Pays basque et tout le Sud-Ouest.</p>
+    <ul class="events__list">
+      <li><b>Mariages</b><span>Le vin d'honneur sent le feu de bois. Le repas suit, pour toute la famille.</span></li>
+      <li><b>Séminaires et fêtes d'entreprise</b><span>Une animation et un repas sur la même remorque. Facture claire.</span></li>
+      <li><b>Festivals</b><span>Un service qui tient la cadence, une fumée qu'on voit de loin.</span></li>
+      <li><b>Fêtes de village</b><span>Des longues tablées, un seul cuisinier pour tout le monde.</span></li>
+      <li><b>Anniversaires</b><span>De quelques dizaines à quelques centaines d'invités.</span></li>
+      <li><b>Associations</b><span>Repas de club, kermesse, soirée de soutien.</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- DÉROULÉ -->
+<section class="steps" aria-labelledby="steps-title">
+  <h2 id="steps-title" class="h-stencil">Le jour J, dans l'ordre</h2>
+  <ol class="steps__list">
+    <li><span class="steps__n">01</span><h3>Vous remplissez le bordereau</h3><p>Date, lieu, nombre d'invités, type d'événement. Réponse sous 48 h.</p></li>
+    <li><span class="steps__n">02</span><h3>On cale le menu</h3><p>Viandes, accompagnements, sauces, plats sans viande. Vous recevez un devis précis.</p></li>
+    <li><span class="steps__n">03</span><h3>La machine arrive</h3><p>Il lui faut une place plane et un accès pour la voiture qui la tracte. C'est tout.</p></li>
+    <li><span class="steps__n">04</span><h3>Le feu tourne</h3><p>Cuisson lente au bois, sur place, pendant des heures. Vos invités voient la fumée.</p></li>
+    <li><span class="steps__n">05</span><h3>Découpe et service</h3><p>Devant les invités, au buffet ou à table. Mika remballe et repart.</p></li>
+  </ol>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq" aria-labelledby="faq-title">
+  <h2 id="faq-title" class="h-stencil h-stencil--dark">Questions de logistique</h2>
+  <div class="faq__list">
+    <details>
+      <summary>Quelle place faut-il pour la remorque ?</summary>
+      <p>Un emplacement plat, en herbe ou en dur, accessible à une voiture qui tracte une remorque double essieu. Prévoyez un peu d'espace autour pour travailler et pour que la fumée parte. On regarde ensemble sur plan ou en photo avant de valider. <!-- À CONFIRMER : dimensions exactes nécessaires --></p>
+    </details>
+    <details>
+      <summary>Faut-il de l'eau et de l'électricité ?</summary>
+      <p>La cuisson se fait au bois, pas à l'électricité. Un point d'eau à proximité aide pour le service. Si vous n'en avez pas, dites-le dans le formulaire : on s'organise. <!-- À CONFIRMER avec Mika --></p>
+    </details>
+    <details>
+      <summary>Et s'il pleut ?</summary>
+      <p>La machine est en acier et fermée : elle cuit sous la pluie. <!-- À CONFIRMER --> Il faut juste un abri pour le service et pour vos invités, une tente suffit.</p>
+    </details>
+    <details>
+      <summary>La fumée va-t-elle gêner les invités ?</summary>
+      <p>On place la remorque en tenant compte du vent, à distance des tables. La fumée fait partie du spectacle, pas besoin de la respirer pendant le repas.</p>
+    </details>
+    <details>
+      <summary>Avez-vous des plats végétariens ? Et les allergies ?</summary>
+      <p>Oui. Mika est cuisinier avant d'être barbecue : accompagnements, légumes au feu de bois, plats sans viande. Signalez les allergies dans le formulaire, elles sont prises en compte dans le menu.</p>
+    </details>
+    <details>
+      <summary>Combien ça coûte ?</summary>
+      <p>Ça dépend du nombre d'invités, du menu et du service souhaité. Chaque événement est sur devis, avec une réponse sous 48 h. Vous pouvez indiquer un budget dans le formulaire.</p>
+    </details>
+    <details>
+      <summary>Jusqu'à combien de personnes ?</summary>
+      <p>Jusqu'à 400 couverts par événement. La machine cuit tout en même temps, sur place.</p>
+    </details>
+  </div>
+</section>
+
+<!-- DEVIS -->
+<section class="quote" id="devis" aria-labelledby="quote-title">
+  <form class="slip" data-form novalidate>
+    <div class="slip__top">
+      <h2 id="quote-title" class="slip__title">Bon de commande</h2>
+      <p class="slip__sub">Remplissez, envoyez, réponse sous 48 h. Sans engagement.</p>
+      <div class="slip__stamp" aria-hidden="true">Devis<br>48 h</div>
+    </div>
+
+    <fieldset class="slip__grid">
+      <legend class="sr-only">Votre événement</legend>
+      <label class="f f--wide">
+        <span>Type d'événement</span>
+        <select name="type" required>
+          <option value="">Choisir</option>
+          <option>Mariage</option>
+          <option>Séminaire ou fête d'entreprise</option>
+          <option>Festival</option>
+          <option>Fête de village</option>
+          <option>Anniversaire</option>
+          <option>Association</option>
+          <option>Autre</option>
+        </select>
+      </label>
+      <label class="f"><span>Date</span><input type="date" name="date" required></label>
+      <label class="f"><span>Nombre d'invités</span><input type="number" name="invites" min="10" max="400" inputmode="numeric" placeholder="ex. 120" required></label>
+      <label class="f f--wide"><span>Lieu (commune)</span><input type="text" name="lieu" autocomplete="address-level2" placeholder="ex. Espelette" required></label>
+      <label class="f"><span>Budget par personne (facultatif)</span><input type="text" name="budget" placeholder="ex. 40 €"></label>
+      <label class="f"><span>Votre nom</span><input type="text" name="nom" autocomplete="name" required></label>
+      <label class="f f--wide"><span>Téléphone</span><input type="tel" name="tel" autocomplete="tel" required></label>
+      <label class="f f--wide"><span>Email (facultatif)</span><input type="email" name="email" autocomplete="email"></label>
+      <label class="f f--full"><span>Précisions (allergies, végétariens, service à table ou buffet)</span><textarea name="msg" rows="3"></textarea></label>
+    </fieldset>
+
+    <p class="slip__err" role="alert" hidden>Il manque : <span data-missing></span>.</p>
+
+    <div class="slip__send">
+      <button class="btn btn--orange" type="submit" value="wa">Envoyer par WhatsApp</button>
+      <button class="btn btn--line" type="submit" value="mail">Envoyer par email</button>
+    </div>
+    <p class="slip__how">Le bouton ouvre WhatsApp ou votre messagerie avec le message déjà rempli. Vous le relisez, vous l'envoyez.</p>
+  </form>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="foot__cols">
+    <div>
+      <p class="foot__b">Contact</p>
+      <!-- À REMPLACER : coordonnées réelles -->
+      <p><a href="tel:+33600000000">06 00 00 00 00</a></p>
+      <p><a href="https://wa.me/33600000000">WhatsApp</a></p>
+      <p><a href="mailto:contact@mikabon.fr">contact@mikabon.fr</a></p>
+      <p><a href="https://instagram.com/mikabon">Instagram @mikabon</a></p>
+    </div>
+    <div>
+      <p class="foot__b">Zone</p>
+      <!-- À CONFIRMER -->
+      <p>Pays basque et tout le Sud-Ouest</p>
+      <p>Jusqu'à 400 couverts</p>
+    </div>
+    <div>
+      <p class="foot__b">Ce site</p>
+      <p><a href="../index.html">Voir les autres directions</a></p>
+    </div>
+  </div>
+  <p class="foot__name" aria-hidden="true">Mika Bon</p>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mika Bon, barbecue fumé au bois</title>
+<meta name="description" content="Mika Bon, chef, cuit sur place au feu de bois avec son smoker sur remorque. Barbecue texan pour mariages, entreprises, festivals et fêtes, jusqu'à 400 personnes.">
+<meta name="theme-color" content="#15100C">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="../img/fumee.jpg">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a class="skip" href="#devis">Aller au formulaire de devis</a>
+
+<header class="nav" id="nav">
+  <a class="nav__brand" href="#top" aria-label="Mika Bon, retour en haut">Mika Bon</a>
+  <nav class="nav__links" aria-label="Sections">
+    <a href="#chef">Le chef</a>
+    <a href="#machine">La machine</a>
+    <a href="#assiette">Au menu</a>
+    <a href="#evenements">Événements</a>
+    <a href="#faq">Questions</a>
+  </nav>
+  <!-- À REMPLACER : numéro réel -->
+  <a class="nav__tel" href="tel:+33600000000">06 00 00 00 00</a>
+  <a class="btn btn--fire btn--sm" href="#devis">Devis</a>
+</header>
+
+<main id="top">
+
+  <!-- 1. HERO -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero__bg" aria-hidden="true">
+      <img src="../img/fumee.jpg" alt="" fetchpriority="high">
+    </div>
+    <canvas class="smoke" id="smoke-hero" aria-hidden="true"></canvas>
+    <div class="hero__glow" aria-hidden="true"></div>
+    <div class="hero__inner">
+      <h1 class="hero__title" id="hero-title">
+        <span class="line"><span>Fumé</span></span>
+        <span class="line"><span>toute</span></span>
+        <span class="line"><span>la nuit.</span></span>
+      </h1>
+      <div class="hero__side">
+        <p class="hero__lead">Mika Bon, chef, arrive avec son smoker sur remorque et cuit la viande sur place, au bois, devant vos invités. Pour vos événements, jusqu'à 400 personnes.</p>
+        <div class="hero__cta">
+          <a class="btn btn--fire" href="#devis">Demander un devis</a>
+          <!-- À REMPLACER : numéro WhatsApp réel -->
+          <a class="btn btn--ghost" href="https://wa.me/33600000000?text=Bonjour%20Mika%2C%20je%20pr%C3%A9pare%20un%20%C3%A9v%C3%A9nement%20et%20j%27aimerais%20en%20parler." target="_blank" rel="noopener">Écrire sur WhatsApp</a>
+        </div>
+        <!-- À CONFIRMER : zone d'intervention -->
+        <p class="hero__zone">Pays basque et tout le Sud-Ouest</p>
+      </div>
+    </div>
+    <a class="hero__scroll" href="#dechire" aria-label="Descendre vers la suite">
+      <span></span>
+    </a>
+  </section>
+
+  <!-- 2. SIGNATURE : LE DÉCHIREMENT -->
+  <section class="tear" id="dechire" aria-label="Un brisket fumé qui se détache tout seul">
+    <div class="tear__stick">
+      <div class="tear__stage" id="tear-stage">
+        <picture class="tear__img tear__img--1">
+          <source media="(max-width: 700px)" srcset="../img/dechire-1-carre.jpg">
+          <img src="../img/dechire-1.jpg" alt="Un brisket entier à la croûte noire, posé sur du papier boucher rose." loading="lazy">
+        </picture>
+        <picture class="tear__img tear__img--2">
+          <source media="(max-width: 700px)" srcset="../img/dechire-2-carre.jpg">
+          <img src="../img/dechire-2.jpg" alt="" loading="lazy">
+        </picture>
+        <picture class="tear__img tear__img--3">
+          <source media="(max-width: 700px)" srcset="../img/dechire-3-carre.jpg">
+          <img src="../img/dechire-3.jpg" alt="" loading="lazy">
+        </picture>
+      </div>
+      <canvas class="smoke smoke--tear" id="smoke-tear" aria-hidden="true"></canvas>
+      <canvas class="embers" id="embers" aria-hidden="true"></canvas>
+      <div class="tear__vignette" aria-hidden="true"></div>
+      <div class="tear__words">
+        <p class="tear__w tear__w--1">14 heures<br>de bois.</p>
+        <p class="tear__w tear__w--2">La croûte<br>craque.</p>
+        <p class="tear__w tear__w--3">Ça se détache<br>tout seul.</p>
+      </div>
+      <p class="tear__caption">Brisket de bœuf. Jusqu'à 14 heures de cuisson lente pour une pièce entière.</p>
+      <div class="tear__progress" aria-hidden="true"><span id="tear-bar"></span></div>
+    </div>
+  </section>
+
+  <!-- 3. LE CHEF -->
+  <section class="chef" id="chef" aria-labelledby="chef-title">
+    <figure class="chef__photo">
+      <img src="../img/mika-portrait.jpg" alt="Mika Bon debout en tablier, le smoker fume derrière lui dans un pré." loading="lazy">
+    </figure>
+    <div class="chef__text">
+      <h2 class="h2" id="chef-title">Un chef<br>derrière<br>le feu</h2>
+      <blockquote class="chef__quote">
+        <p>J'ai été chef privé pendant des années. Aujourd'hui je cuisine au feu de bois, lentement, à la texane.</p>
+        <p>J'arrive avec ma cuisine sur roues. Je fume la viande sur place, je la découpe devant vos invités. Les sauces et les accompagnements, je les fais moi-même.</p>
+        <p>Vous recevez. Je m'occupe du reste.</p>
+      </blockquote>
+      <p class="chef__sign">Mika</p>
+    </div>
+  </section>
+
+  <!-- 4. LA MACHINE -->
+  <section class="machine" id="machine" aria-labelledby="machine-title">
+    <div class="machine__head">
+      <h2 class="machine__num" id="machine-title"><span class="machine__400">400</span><span class="machine__unit">couverts, cuits en même temps</span></h2>
+      <p class="machine__intro">Une remorque construite sur mesure, qui fume du matin au service. Toute la viande cuit au même endroit, au même moment, à côté de vos tables.</p>
+    </div>
+    <figure class="machine__photo">
+      <img src="../img/machine.jpg" alt="La remorque smoker de trois quarts, noyée dans la fumée, Mika en casquette jaune à côté." loading="lazy">
+    </figure>
+    <dl class="machine__parts">
+      <div><dt>L'armoire verticale</dt><dd>Un fumoir à étagères. Les canards et les volailles cuisent empilés sur plusieurs niveaux.</dd></div>
+      <div><dt>Le fourneau à trois portes</dt><dd>Un long fourneau horizontal. Le feu de bois est à côté, la fumée traverse la viande sans la brûler.</dd></div>
+      <div><dt>Le plan de travail en bois</dt><dd>Sur toute la longueur. On découpe et on effiloche directement à la sortie du feu.</dd></div>
+      <div><dt>Le double essieu</dt><dd>La remorque se tracte. Elle se gare dans un pré, une cour ou un parking.</dd></div>
+    </dl>
+  </section>
+
+  <!-- 5. CE QU'IL SERT -->
+  <section class="menu" id="assiette" aria-labelledby="menu-title">
+    <div class="menu__head">
+      <h2 class="h2" id="menu-title">Ce qui sort<br>du feu</h2>
+      <p>Canards laqués, volailles entières, porc et bœuf fumés pendant des heures. Avec des accompagnements de chef et des sauces maison.</p>
+    </div>
+    <div class="gallery">
+      <figure class="g g--a"><img src="../img/canards.jpg" alt="Canards entiers fumés, peau laquée couleur acajou, sur la grille." loading="lazy"><figcaption>Canards entiers, fumés puis laqués</figcaption></figure>
+      <figure class="g g--b"><img src="../img/mika-canards-fumee.jpg" alt="Mika porte un plateau de canards fumés, une colonne de fumée derrière lui." loading="lazy"><figcaption>Sortie de l'armoire, plateau plein</figcaption></figure>
+      <figure class="g g--c"><img src="../img/assiette.jpg" alt="Assiette de viande fumée tranchée, gratin dauphinois et sauce verte aux herbes." loading="lazy"><figcaption>Viande fumée, gratin dauphinois, sauce verte maison</figcaption></figure>
+      <figure class="g g--d"><img src="../img/pulled-mains.jpg" alt="Des mains gantées effilochent une pièce de viande fumée." loading="lazy"><figcaption>Effiloché à la main</figcaption></figure>
+      <figure class="g g--e"><img src="../img/dindes-rack.jpg" alt="L'armoire ouverte, trois étages de volailles dorées." loading="lazy"><figcaption>Volailles entières, sur trois étages</figcaption></figure>
+      <figure class="g g--f"><img src="../img/grilles.jpg" alt="Grilles pleines de pièces de porc et de bœuf assaisonnées dans le fourneau." loading="lazy"><figcaption>Porc et bœuf assaisonnés, avant la fumée</figcaption></figure>
+      <figure class="g g--g"><img src="../img/brisket-alu.jpg" alt="Un brisket à la croûte noire dans une feuille d'aluminium ouverte." loading="lazy"><figcaption>Brisket emballé pour finir la cuisson</figcaption></figure>
+      <figure class="g g--h"><img src="../img/decoupe.jpg" alt="Découpe au couteau d'une pièce fumée sur une planche." loading="lazy"><figcaption>Découpe devant les invités</figcaption></figure>
+    </div>
+  </section>
+
+  <!-- 6. ÉVÉNEMENTS -->
+  <section class="events" id="evenements" aria-labelledby="events-title">
+    <h2 class="h2" id="events-title">Pour quelle<br>tablée ?</h2>
+    <ul class="events__list">
+      <li class="ev">
+        <img src="../img/tablee.jpg" alt="Longue tablée de convives sous une grande tente." loading="lazy">
+        <div class="ev__body">
+          <h3 class="ev__name">Mariages</h3>
+          <p>Un vin d'honneur qui sent le bois, un repas servi pour tous à la même heure. La découpe devient une animation.</p>
+        </div>
+      </li>
+      <li class="ev">
+        <img src="../img/service.jpg" alt="Service au buffet, des invités tendent leur assiette." loading="lazy">
+        <div class="ev__body">
+          <h3 class="ev__name">Entreprises</h3>
+          <p>Séminaires, fêtes d'équipe, inaugurations. Un buffet généreux, servi vite, sans cuisine à installer.</p>
+        </div>
+      </li>
+      <li class="ev">
+        <img src="../img/foule.jpg" alt="Tentes blanches et longue file d'invités, une maison basque au fond." loading="lazy">
+        <div class="ev__body">
+          <h3 class="ev__name">Festivals et fêtes de village</h3>
+          <p>La remorque se voit de loin et se sent de plus loin. Elle tient le rythme d'une longue file.</p>
+        </div>
+      </li>
+      <li class="ev">
+        <img src="../img/file.jpg" alt="Le chef sert les invités au buffet en plein air." loading="lazy">
+        <div class="ev__body">
+          <h3 class="ev__name">Privé et associations</h3>
+          <p>Anniversaires, fêtes de famille, repas de club. Même cuisine, même soin, à votre échelle.</p>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- 7. DÉROULÉ -->
+  <section class="steps" aria-labelledby="steps-title">
+    <h2 class="h2" id="steps-title">Comment<br>ça se passe</h2>
+    <ol class="steps__list">
+      <li><h3>Premier contact</h3><p>Vous remplissez le formulaire ou vous écrivez sur WhatsApp. Je réponds sous 48 h avec une première idée de prix.</p></li>
+      <li><h3>Le menu</h3><p>On choisit ensemble les viandes, les accompagnements et les sauces. Végétariens et allergies sont prévus dès ce moment.</p></li>
+      <li><h3>Le jour J</h3><p>J'arrive avec la remorque bien avant le repas. Les grosses pièces demandent de longues heures : le feu démarre tôt.</p></li>
+      <li><h3>Le service</h3><p>Découpe et effilochage devant les invités, au buffet ou à l'assiette. Ensuite je range et je repars avec la remorque.</p></li>
+    </ol>
+  </section>
+
+  <!-- 8. FAQ -->
+  <section class="faq" id="faq" aria-labelledby="faq-title">
+    <h2 class="h2" id="faq-title">Les questions<br>pratiques</h2>
+    <div class="faq__list">
+      <details>
+        <summary>De quoi avez-vous besoin sur place ?</summary>
+        <p>Une place plane et stable pour la remorque, accessible en voiture. Le smoker cuit au bois. Un point d'eau et une prise à proximité facilitent le service : on vérifie ensemble au moment du devis.</p>
+      </details>
+      <details>
+        <summary>La fumée va-t-elle gêner les invités ?</summary>
+        <p>La remorque se place à l'écart des tables, en tenant compte du vent. On sent le bois de loin, on ne mange pas dans la fumée.</p>
+      </details>
+      <details>
+        <summary>Et s'il pleut ?</summary>
+        <p>Le smoker cuit sous la pluie. Pour le service, il faut un abri : tente, barnum ou préau. On le prévoit dans le devis.</p>
+      </details>
+      <details>
+        <summary>Végétariens, allergies ?</summary>
+        <p>Dites-le-moi dès la demande. Je prévois des plats sans viande et je signale les allergènes de chaque préparation.</p>
+      </details>
+      <details>
+        <summary>Combien ça coûte ?</summary>
+        <p>C'est sur devis. Le prix dépend du nombre d'invités, du menu et du type de service. Vous recevez une réponse sous 48 h.</p>
+      </details>
+      <details>
+        <summary>Combien de temps à l'avance réserver ?</summary>
+        <p>Le plus tôt possible pour un mariage ou un week-end d'été. Pour une date proche, écrivez quand même : je vous dis tout de suite si c'est possible.</p>
+      </details>
+      <details>
+        <summary>Jusqu'où vous déplacez-vous ?</summary>
+        <!-- À CONFIRMER : zone d'intervention -->
+        <p>Pays basque et tout le Sud-Ouest. Plus loin, demandez : ça dépend de la date et du nombre d'invités.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- 9. DEVIS -->
+  <section class="quote" id="devis" aria-labelledby="quote-title">
+    <canvas class="smoke smoke--quote" id="smoke-quote" aria-hidden="true"></canvas>
+    <div class="quote__inner">
+      <div class="quote__head">
+        <h2 class="h2" id="quote-title">Parlez-moi<br>de votre date</h2>
+        <p>Quatre informations suffisent pour un premier prix. Réponse sous 48 h.</p>
+        <ul class="quote__direct">
+          <!-- À REMPLACER : coordonnées réelles -->
+          <li><a href="tel:+33600000000">06 00 00 00 00</a></li>
+          <li><a href="mailto:contact@mikabon.fr">contact@mikabon.fr</a></li>
+          <li><a href="https://instagram.com/mikabon" target="_blank" rel="noopener">@mikabon</a></li>
+        </ul>
+      </div>
+      <form class="form" id="quote-form" novalidate>
+        <div class="field field--half">
+          <label for="f-type">Type d'événement</label>
+          <select id="f-type" name="type" required>
+            <option value="">Choisir</option>
+            <option>Mariage</option>
+            <option>Entreprise</option>
+            <option>Festival ou fête de village</option>
+            <option>Anniversaire ou fête privée</option>
+            <option>Association</option>
+            <option>Autre</option>
+          </select>
+        </div>
+        <div class="field field--half">
+          <label for="f-date">Date</label>
+          <input id="f-date" name="date" type="date" required>
+        </div>
+        <div class="field field--half">
+          <label for="f-lieu">Lieu</label>
+          <input id="f-lieu" name="lieu" type="text" placeholder="Commune ou salle" autocomplete="address-level2" required>
+        </div>
+        <div class="field field--half">
+          <label for="f-nb">Nombre d'invités</label>
+          <input id="f-nb" name="invites" type="number" min="10" max="2000" inputmode="numeric" placeholder="Jusqu'à 400" required>
+        </div>
+        <div class="field">
+          <label for="f-budget">Budget par personne <span class="opt">(facultatif)</span></label>
+          <select id="f-budget" name="budget">
+            <option value="">Je ne sais pas encore</option>
+            <option>Moins de 30 €</option>
+            <option>30 à 50 €</option>
+            <option>50 à 80 €</option>
+            <option>Plus de 80 €</option>
+          </select>
+        </div>
+        <div class="field field--half">
+          <label for="f-nom">Votre nom</label>
+          <input id="f-nom" name="nom" type="text" autocomplete="name" required>
+        </div>
+        <div class="field field--half">
+          <label for="f-tel">Téléphone ou e-mail</label>
+          <input id="f-tel" name="contact" type="text" autocomplete="tel" required>
+        </div>
+        <div class="field">
+          <label for="f-msg">Un détail à ajouter <span class="opt">(facultatif)</span></label>
+          <textarea id="f-msg" name="message" rows="3" placeholder="Végétariens, allergies, service à l'assiette ou buffet..."></textarea>
+        </div>
+        <p class="form__error" id="form-error" role="alert" hidden></p>
+        <div class="form__actions">
+          <button class="btn btn--fire" type="submit" data-channel="whatsapp">Envoyer par WhatsApp</button>
+          <button class="btn btn--ghost" type="submit" data-channel="mail">Envoyer par e-mail</button>
+        </div>
+        <p class="form__note">Le bouton ouvre WhatsApp ou votre messagerie avec la demande déjà écrite. Il ne reste qu'à l'envoyer.</p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <p class="foot__mark" aria-hidden="true">Mika Bon</p>
+  <div class="foot__row">
+    <p>Barbecue texan fumé au bois. Traiteur pour événements jusqu'à 400 personnes.<br><!-- À CONFIRMER -->Pays basque et tout le Sud-Ouest.</p>
+    <!-- À REMPLACER : coordonnées réelles -->
+    <p><a href="tel:+33600000000">06 00 00 00 00</a><br><a href="mailto:contact@mikabon.fr">contact@mikabon.fr</a><br><a href="https://instagram.com/mikabon" target="_blank" rel="noopener">@mikabon</a></p>
+    <p><a class="foot__dirs" href="../index.html">Voir les autres directions</a></p>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
