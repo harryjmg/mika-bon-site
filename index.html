@@ -24,6 +24,9 @@
   h2 { font: 400 34px/1.1 "Instrument Serif", Georgia, serif; margin: 18px 0 6px; }
   .dir p { margin: 0; color: var(--mute); }
   .go { display: inline-block; margin-top: 12px; font-weight: 600; border-bottom: 1px solid currentColor; }
+  .dir--une { display: grid; grid-template-columns: 1.6fr 1fr; gap: 32px; align-items: center; margin-bottom: 64px; }
+  .dir--une h2 { font-size: 44px; margin-top: 0; }
+  @media (max-width: 900px) { .dir--une { grid-template-columns: 1fr; gap: 0; } .dir--une h2 { font-size: 34px; margin-top: 18px; } }
   .sub { font: 400 30px/1.1 "Instrument Serif", Georgia, serif; margin: 88px 0 24px; color: var(--mute); }
   .grid--small h2 { font-size: 24px; }
   .grid--small .dir { opacity: .8; }
@@ -35,6 +38,14 @@
 <main>
   <h1>Mika Bon,<br>en version cinéma</h1>
   <p class="intro">Trois pages qui se regardent comme un film, du feu de la nuit à la grande tablée du soir. Ouvrez-les et scrollez lentement, avec le son du feu dans la tête.</p>
+  <a class="dir dir--une" href="g/">
+    <div class="shot"><img src="shots/g.jpg" alt="Aperçu de la direction La Maison"></div>
+    <div>
+      <h2>G. La Maison</h2>
+      <p>Dans l'esprit du site de Marché Noir que Mika aime : vidéo de viande en ouverture, grand titre serif, emblème gravé de sa remorque, sections charbon et crème avec du brouillard.</p>
+      <span class="go">Ouvrir la direction G</span>
+    </div>
+  </a>
   <div class="grid">
     <a class="dir" href="d/">
       <div class="shot"><img src="shots/d.jpg" alt="Aperçu de la direction La nuit d'avant"></div>
