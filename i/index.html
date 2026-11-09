@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MC Cuisine, cuisinier au feu de bois</title>
+<meta name="description" content="MC Cuisine : Mika cuisine sur place au feu de bois, avec son fumoir sur remorque. Mariages, entreprises, fêtes, jusqu'à 400 invités.">
+<meta name="theme-color" content="#1D1D1D">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Castoro+Titling&family=Castoro:ital@0;1&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="../img/ouverture-poster.jpg" fetchpriority="high">
+<link rel="stylesheet" href="style.css">
+<script>document.documentElement.classList.add("js")</script>
+</head>
+<body>
+
+<a class="skip" href="#devis">Aller au devis</a>
+
+<header class="bar" id="bar">
+  <!-- Logos copiés de ../../logo/svg/ (monogramme-creme.svg, mc-cuisine-creme.svg) -->
+  <a class="logo" href="#top"><img src="monogramme.svg" alt="MC Cuisine, accueil" width="956" height="956"></a>
+  <a class="btn btn--sm" href="#devis">Devis</a>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <video class="hero__video" autoplay muted loop playsinline preload="auto" poster="../img/ouverture-poster.jpg" aria-hidden="true">
+      <source src="../img/ouverture.mp4" type="video/mp4">
+    </video>
+    <div class="hero__veil" aria-hidden="true"></div>
+    <div class="hero__text">
+      <h1 class="hero__name"><img src="embleme.svg" alt="MC Cuisine" width="1000" height="1000" fetchpriority="high"></h1>
+      <p class="hero__line">Une viande que vous avez déjà mangée. Mais pas comme vous la connaissez.</p>
+      <a class="btn" href="#devis">Demander un devis</a>
+    </div>
+  </section>
+
+  <section class="split">
+    <img class="split__img split__img--left" src="../img/mika-portrait.jpg" alt="Mika en tablier devant son fumoir sur remorque qui fume" width="1800" height="1200" loading="lazy">
+    <div class="split__text reveal">
+      <h2 class="big">Mika, cuisinier.</h2>
+      <p>Ancien chef privé. Il cuisine chez vous, sur place, devant vos invités.</p>
+    </div>
+  </section>
+
+  <section class="frame">
+    <img class="frame__img" src="../img/machine.jpg" alt="Le fumoir sur remorque de Mika, noyé de fumée, dans un pré" width="1800" height="1200" loading="lazy">
+    <div class="frame__text reveal">
+      <h2 class="big">Jusqu'à 400 invités.</h2>
+      <p>Un fumoir sur remorque, construit sur mesure. Du bois, et des heures de cuisson.</p>
+    </div>
+  </section>
+
+  <section class="frame frame--right">
+    <img class="frame__img" src="../img/poulets-3.jpg" alt="Volailles fumées, peau dorée, en gros plan sur la grille" width="1800" height="1200" loading="lazy">
+    <div class="frame__text reveal">
+      <h2 class="big">Le temps fait le goût.</h2>
+    </div>
+  </section>
+
+  <section class="split split--flip">
+    <img class="split__img" src="../img/tablee.jpg" alt="Longue tablée d'invités sous une grande tente" width="1800" height="1200" loading="lazy">
+    <div class="split__text reveal">
+      <h2 class="big">Vous restez à table.</h2>
+      <p>Mariages, entreprises, fêtes. Mika s'occupe du repas.</p>
+    </div>
+  </section>
+
+  <section class="contact" id="devis" aria-labelledby="devis-title">
+    <div class="contact__in">
+      <h2 class="big" id="devis-title">Parlons de votre date.</h2>
+
+      <form class="form" id="quote-form" novalidate>
+        <div class="field">
+          <label for="f-date">Date</label>
+          <input id="f-date" name="date" type="date" required>
+        </div>
+        <div class="field">
+          <label for="f-lieu">Lieu</label>
+          <input id="f-lieu" name="lieu" type="text" autocomplete="address-level2" required>
+        </div>
+        <div class="field">
+          <label for="f-nb">Invités</label>
+          <input id="f-nb" name="invites" type="number" min="10" max="2000" inputmode="numeric" required>
+        </div>
+        <div class="field">
+          <label for="f-tel">Téléphone</label>
+          <input id="f-tel" name="tel" type="tel" autocomplete="tel" required>
+        </div>
+        <p class="form__error" id="form-error" role="alert" hidden></p>
+        <div class="form__actions">
+          <button class="btn" type="submit" data-channel="whatsapp">Envoyer par WhatsApp</button>
+          <button class="btn btn--line" type="submit" data-channel="mail">Par e-mail</button>
+        </div>
+      </form>
+
+      <!-- À REMPLACER : coordonnées réelles (aussi dans main.js) -->
+      <p class="direct">
+        <a href="tel:+33600000000">06 00 00 00 00</a>
+        <a href="mailto:contact@mccuisine.fr">contact@mccuisine.fr</a>
+        <a href="https://www.instagram.com/mccuisine/" rel="noopener">@mccuisine</a>
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <!-- À CONFIRMER : ville -->
+  <p>MC Cuisine, Anglet</p>
+  <a href="../index.html">Voir les autres directions</a>
+</footer>
+
+<script src="main.js" defer></script>
+</body>
+</html>

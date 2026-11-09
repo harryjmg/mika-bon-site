@@ -1,0 +1,199 @@
+/* MC Cuisine, direction I : la version courte.
+   Charbon, crème, corail. Castoro Titling pour le nom, Castoro pour les phrases, Jost pour le reste. */
+
+:root {
+  --coal: #1D1D1D;
+  --cream: #FFEEDF;
+  --coral: #E36D54;
+  --coral-dark: #C9563E;
+  --coral-ink: #B4432C; /* corail lisible sur crème */
+  --ink: #1D1D1D;
+
+  --title: "Castoro Titling", "Times New Roman", serif;
+  --serif: "Castoro", Georgia, serif;
+  --sans: "Jost", "Futura", system-ui, sans-serif;
+
+  --gut: clamp(20px, 5vw, 80px);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--coal);
+  color: var(--cream);
+  font: 400 17px/1.6 var(--sans);
+  overflow-x: hidden;
+}
+img, video { display: block; max-width: 100%; }
+a { color: inherit; }
+h1, h2, p { margin: 0; }
+
+:focus-visible { outline: 2px solid var(--coral); outline-offset: 4px; }
+
+.skip {
+  position: absolute; left: 16px; top: -60px; z-index: 100;
+  background: var(--cream); color: var(--coal); padding: 10px 16px;
+}
+.skip:focus { top: 16px; }
+
+/* ---------- Boutons ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 52px; padding: 0 30px;
+  background: var(--coral); color: #fff; border: 1px solid var(--coral);
+  font: 500 13px/1 var(--sans); letter-spacing: .2em; text-transform: uppercase;
+  text-decoration: none; cursor: pointer;
+  transition: background-color .2s, border-color .2s, color .2s;
+}
+.btn:hover { background: var(--coral-dark); border-color: var(--coral-dark); }
+.btn--sm { min-height: 40px; padding: 0 18px; font-size: 12px; }
+.btn--line { background: transparent; color: var(--cream); border-color: rgba(255,238,223,.45); }
+.btn--line:hover { background: transparent; border-color: var(--cream); }
+
+/* ---------- Barre ---------- */
+.bar {
+  position: fixed; inset: 0 0 auto; z-index: 50;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 18px var(--gut);
+  transition: background-color .3s, padding .3s;
+}
+.bar.is-on { background: rgba(29,29,29,.94); padding-top: 12px; padding-bottom: 12px; }
+/* Le monogramme n'apparaît qu'une fois l'emblème de l'ouverture passé */
+.logo { display: block; opacity: 0; visibility: hidden; transition: opacity .3s, visibility .3s; }
+.bar.is-on .logo { opacity: 1; visibility: visible; }
+.bar { justify-content: space-between; }
+.logo img { height: 44px; width: 44px; }
+
+/* ---------- Ouverture ---------- */
+.hero {
+  position: relative; min-height: 100vh; min-height: 100svh;
+  display: flex; align-items: flex-end;
+  padding: 120px var(--gut) clamp(56px, 10vh, 110px);
+  overflow: hidden; isolation: isolate;
+}
+.hero__video {
+  position: absolute; inset: 0; z-index: -2;
+  width: 100%; height: 100%; object-fit: cover;
+}
+.hero__veil {
+  position: absolute; inset: 0; z-index: -1;
+  background:
+    linear-gradient(to top, rgba(29,29,29,.85) 0%, rgba(29,29,29,.25) 55%, rgba(29,29,29,.45) 100%);
+}
+.hero__text { max-width: 1100px; }
+.hero__name { line-height: 0; }
+.hero__name img {
+  width: clamp(190px, 24vw, 330px); height: auto;
+  filter: drop-shadow(0 4px 24px rgba(0,0,0,.45));
+}
+.hero__line {
+  margin: 22px 0 36px; max-width: 38ch;
+  font: italic 400 clamp(21px, 2.3vw, 32px)/1.3 var(--serif);
+}
+
+/* ---------- Titres des blocs ---------- */
+.big {
+  font: 400 clamp(36px, 5.4vw, 80px)/1.04 var(--serif);
+  letter-spacing: -.01em;
+}
+.big + p { margin-top: 18px; max-width: 34ch; font-size: clamp(17px, 1.4vw, 20px); }
+
+/* ---------- Bloc partagé : photo + texte sur crème ---------- */
+.split {
+  display: grid; grid-template-columns: 1.35fr 1fr;
+  background: var(--cream); color: var(--ink);
+}
+.split__img { width: 100%; height: 100%; min-height: 78vh; object-fit: cover; }
+.split__text {
+  display: flex; flex-direction: column; justify-content: center;
+  padding: clamp(48px, 7vw, 120px) var(--gut);
+}
+.split--flip .split__img { order: 2; }
+.split__img--left { object-position: 8% 30%; } /* Mika est à gauche du cadre */
+
+/* ---------- Bloc plein cadre ---------- */
+.frame {
+  position: relative; min-height: 100vh; min-height: 100svh;
+  display: flex; align-items: flex-end;
+  padding: 0 var(--gut) clamp(56px, 10vh, 110px);
+  overflow: hidden; isolation: isolate;
+}
+.frame__img {
+  position: absolute; inset: 0; z-index: -2;
+  width: 100%; height: 100%; object-fit: cover;
+  filter: saturate(.9) contrast(1.05) brightness(.85);
+}
+.frame::after {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background: linear-gradient(to top, rgba(29,29,29,.85), rgba(29,29,29,0) 60%);
+}
+.frame--right { justify-content: flex-end; text-align: right; }
+.frame--right .frame__text p { margin-left: auto; }
+
+/* ---------- Contact ---------- */
+.contact { padding: clamp(80px, 12vw, 160px) var(--gut); }
+.contact__in { max-width: 900px; margin: 0 auto; }
+.form {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px;
+  margin-top: clamp(36px, 5vw, 56px);
+}
+.field { display: flex; flex-direction: column; gap: 8px; }
+.field label {
+  font: 500 12px/1 var(--sans); letter-spacing: .18em; text-transform: uppercase;
+  color: rgba(255,238,223,.7);
+}
+.field input {
+  width: 100%; min-height: 52px; padding: 0 14px;
+  font: 400 17px/1 var(--sans); color: var(--cream);
+  background: transparent; border: 1px solid rgba(255,238,223,.35); border-radius: 0;
+  color-scheme: dark;
+}
+.field input:focus { border-color: var(--coral); }
+.field input[aria-invalid="true"] { border-color: var(--coral); }
+.form__error { grid-column: 1 / -1; color: var(--coral); }
+.form__actions { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
+.direct {
+  display: flex; flex-wrap: wrap; gap: 10px 32px;
+  margin-top: 48px; padding-top: 28px; border-top: 1px solid rgba(255,238,223,.15);
+  font: 400 clamp(18px, 1.6vw, 22px)/1.3 var(--serif);
+}
+.direct a { text-decoration: none; }
+.direct a:hover { color: var(--coral); }
+
+/* ---------- Pied de page ---------- */
+.foot {
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px;
+  padding: 28px var(--gut);
+  font-size: 14px; color: rgba(255,238,223,.55);
+  border-top: 1px solid rgba(255,238,223,.1);
+}
+.foot a { text-decoration: none; }
+.foot a:hover { color: var(--cream); text-decoration: underline; }
+
+/* ---------- Apparition douce ---------- */
+.js .reveal { opacity: 0; transform: translateY(24px); transition: opacity .9s ease, transform .9s ease; }
+.js .reveal.is-in { opacity: 1; transform: none; }
+
+/* ---------- Mobile ---------- */
+@media (max-width: 860px) {
+  .split { grid-template-columns: 1fr; }
+  .split__img { min-height: 0; aspect-ratio: 4 / 5; }
+  .split--flip .split__img { order: 0; }
+  .frame { min-height: 80svh; }
+  .frame__img { object-position: 65% 60%; }
+  .form { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 520px) {
+  .form { grid-template-columns: 1fr; }
+  .form__actions .btn { flex: 1 1 100%; }
+  .direct { flex-direction: column; }
+  .frame--right { justify-content: flex-start; text-align: left; }
+  .frame--right .frame__text p { margin-left: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .js .reveal { opacity: 1; transform: none; transition: none; }
+  .bar, .btn { transition: none; }
+}

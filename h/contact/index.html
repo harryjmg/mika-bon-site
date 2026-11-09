@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact et devis : MC Cuisine, Anglet et Pays basque</title>
+<meta name="description" content="Demandez un devis à MC Cuisine : type d'événement, date, lieu, nombre d'invités. Réponse par WhatsApp ou e-mail. Anglet et Pays basque.">
+<meta name="theme-color" content="#1D1D1D">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Castoro+Titling&family=Castoro:ital@0;1&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="../../img/feu.jpg" fetchpriority="high">
+<link rel="stylesheet" href="../style.css">
+<script>document.documentElement.classList.add("js")</script>
+</head>
+<body>
+
+<a class="skip" href="#devis">Aller au formulaire de devis</a>
+
+<header class="top">
+  <!-- Logo : SVG copiés depuis logo/svg/mc-cuisine-creme.svg et mc-cuisine-noir.svg -->
+  <a class="logo" href="../index.html" aria-label="MC Cuisine, accueil">
+    <img class="logo__light" src="../logo-creme.svg" alt="" width="1000" height="1000">
+    <img class="logo__ink" src="../logo-noir.svg" alt="" width="1000" height="1000">
+  </a>
+  <nav class="nav" aria-label="Pages">
+    <a href="../index.html">Accueil</a>
+    <a href="../a-propos/index.html">À propos</a>
+    <a href="../prestations/index.html">Prestations</a>
+    <a href="index.html" aria-current="page">Contact</a>
+  </nav>
+</header>
+
+<main id="contenu">
+
+  <!-- Pas de vidéo dédiée pour cette page : plan fixe du foyer, brouillard par-dessus -->
+  <section class="hero hero--page" aria-labelledby="hero-title">
+    <img class="hero__img" src="../../img/feu.jpg" alt="" width="2000" height="1116" fetchpriority="high">
+    <div class="hero__veil" aria-hidden="true"></div>
+    <div class="fog" aria-hidden="true"><i></i><i></i></div>
+    <h1 class="hero__title" id="hero-title">
+      <span class="ln">Contact</span>
+    </h1>
+    <p class="hero__sub">Une date, un lieu, un nombre d'invités</p>
+  </section>
+
+  <section class="dark fogged pad" id="devis" aria-labelledby="devis-title">
+    <div class="fog" aria-hidden="true"><i></i><i></i></div>
+    <div class="wrap quote__grid">
+      <div class="quote__intro">
+        <h2 class="caps" id="devis-title">Votre devis</h2>
+        <!-- À CONFIRMER : délai de réponse -->
+        <p class="lede lede--sm">Quelques informations suffisent pour un premier prix. Réponse sous 48 heures.</p>
+        <ul class="direct">
+          <!-- À REMPLACER : coordonnées réelles -->
+          <li><a href="tel:+33600000000">06 00 00 00 00</a></li>
+          <li><a href="https://wa.me/33600000000" rel="noopener">WhatsApp</a></li>
+          <li><a href="mailto:contact@mccuisine.fr">contact@mccuisine.fr</a></li>
+          <li><a href="https://www.instagram.com/mccuisine/" rel="noopener">Instagram @mccuisine</a></li>
+        </ul>
+      </div>
+
+      <form class="form" id="quote-form" novalidate>
+        <div class="field">
+          <label for="f-type">Type d'événement</label>
+          <select id="f-type" name="type" required>
+            <option value="">Choisir</option>
+            <option>Mariage</option>
+            <option>Entreprise ou séminaire</option>
+            <option>Fête privée ou anniversaire</option>
+            <option>Village ou association</option>
+            <option>Festival</option>
+            <option>Autre</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-date">Date</label>
+          <input id="f-date" name="date" type="date" required>
+        </div>
+        <div class="field">
+          <label for="f-lieu">Lieu</label>
+          <input id="f-lieu" name="lieu" type="text" placeholder="Commune ou salle" autocomplete="address-level2" required>
+        </div>
+        <div class="field">
+          <label for="f-nb">Nombre d'invités</label>
+          <input id="f-nb" name="invites" type="number" min="10" max="2000" inputmode="numeric" placeholder="Jusqu'à 400" required>
+        </div>
+        <div class="field">
+          <label for="f-nom">Votre nom</label>
+          <input id="f-nom" name="nom" type="text" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label for="f-tel">Téléphone ou e-mail</label>
+          <input id="f-tel" name="contact" type="text" autocomplete="tel" required>
+        </div>
+        <div class="field field--full">
+          <label for="f-msg">Un détail à ajouter <span class="opt">(facultatif)</span></label>
+          <textarea id="f-msg" name="message" rows="3" placeholder="Végétariens, allergies, buffet ou service à table..."></textarea>
+        </div>
+        <p class="form__error" id="form-error" role="alert" hidden></p>
+        <div class="form__actions">
+          <button class="btn btn--coral" type="submit" data-channel="whatsapp">Envoyer par WhatsApp</button>
+          <button class="btn btn--line" type="submit" data-channel="mail">Envoyer par e-mail</button>
+        </div>
+        <p class="form__note">Le bouton ouvre WhatsApp ou votre messagerie avec la demande déjà écrite. Il ne reste qu'à l'envoyer.</p>
+      </form>
+    </div>
+  </section>
+
+  <section class="cream pad" aria-labelledby="zone-title">
+    <div class="wrap zone">
+      <div>
+        <h2 class="caps" id="zone-title">Où Mika se déplace</h2>
+        <!-- À CONFIRMER : zone desservie -->
+        <p class="lede lede--sm">Depuis Anglet, dans tout le Pays basque. Plus loin, demandez&nbsp;: la remorque voyage.</p>
+      </div>
+      <!-- À CONFIRMER : villes desservies -->
+      <ul class="cities">
+        <li>Traiteur barbecue Anglet</li>
+        <li>Traiteur barbecue Biarritz</li>
+        <li>Traiteur barbecue Bayonne</li>
+        <li>Traiteur barbecue Saint-Jean-de-Luz</li>
+        <li>Traiteur barbecue Hendaye</li>
+        <li>Traiteur barbecue Cambo-les-Bains</li>
+        <li>Traiteur barbecue Espelette</li>
+        <li>Traiteur barbecue Saint-Jean-Pied-de-Port</li>
+        <li>Traiteur barbecue Hossegor</li>
+        <li>Traiteur barbecue Capbreton</li>
+        <li>Traiteur barbecue Dax</li>
+        <li>Traiteur barbecue Pau</li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot dark fogged">
+  <div class="fog" aria-hidden="true"><i></i><i></i></div>
+  <div class="wrap foot__grid">
+    <div class="foot__brand">
+      <!-- Logo : logo/svg/mc-cuisine-creme.svg -->
+      <a class="foot__logo" href="../index.html" aria-label="MC Cuisine, accueil"><img src="../logo-creme.svg" alt="" width="1000" height="1000" loading="lazy"></a>
+      <p class="foot__tag">Cuisine au feu de bois, au smoker</p>
+    </div>
+    <div class="foot__contact">
+      <h2 class="foot__h">Contact</h2>
+      <!-- À CONFIRMER : ville -->
+      <p>Anglet, Pays basque</p>
+      <!-- À REMPLACER : coordonnées réelles -->
+      <p><a href="tel:+33600000000">06 00 00 00 00</a><br><a href="mailto:contact@mccuisine.fr">contact@mccuisine.fr</a><br><a href="https://www.instagram.com/mccuisine/" rel="noopener">Instagram @mccuisine</a></p>
+      <a class="btn btn--coral btn--sm" href="#devis">Demander un devis</a>
+    </div>
+    <nav class="foot__links" aria-label="Pages">
+      <h2 class="foot__h">Pages</h2>
+      <ul>
+        <li><a href="../index.html">Accueil</a></li>
+        <li><a href="../a-propos/index.html">À propos</a></li>
+        <li><a href="../prestations/index.html">Prestations</a></li>
+        <li><a href="index.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="wrap foot__end">
+    <p>Photos prises lors d'un événement de Mika. Certains plans (la tablée du soir, le brisket tranché, le feu) sont générés à partir des vraies photos.</p>
+    <a href="../../index.html">Voir les autres directions</a>
+  </div>
+</footer>
+
+<script src="../main.js" defer></script>
+</body>
+</html>
