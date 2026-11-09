@@ -3,107 +3,84 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MC Cuisine, versions</title>
-<meta name="robots" content="noindex">
+<title>MC Cuisine, toutes les pages</title>
+<link rel="icon" href="logo/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;600&family=Instrument+Serif&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Castoro&family=Jost:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  :root { --bg: #1a1714; --ink: #f1ebe3; --mute: #a69b8e; --line: #3a332c; }
+  :root { --bg: #1D1D1D; --ink: #FFEEDF; --mute: #A39C95; --line: #3A3430; --accent: #E36D54; }
   * { box-sizing: border-box; }
-  body { margin: 0; background: var(--bg); color: var(--ink); font: 400 17px/1.55 "Instrument Sans", system-ui, sans-serif; }
-  main { max-width: 1240px; margin: 0 auto; padding: 72px 24px 96px; }
-  h1 { font: 400 clamp(44px, 7vw, 92px)/0.98 "Instrument Serif", Georgia, serif; margin: 0 0 20px; letter-spacing: -0.01em; }
-  .intro { max-width: 62ch; color: var(--mute); margin: 0 0 56px; }
-  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
-  a.dir { color: inherit; text-decoration: none; display: block; }
-  .shot { aspect-ratio: 16 / 11; overflow: hidden; border-radius: 6px; border: 1px solid var(--line); background: #000; }
-  .shot img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; transition: transform .6s ease; }
-  a.dir:hover .shot img, a.dir:focus-visible .shot img { transform: scale(1.03); }
-  a.dir:focus-visible { outline: 2px solid var(--ink); outline-offset: 6px; border-radius: 6px; }
-  h2 { font: 400 34px/1.1 "Instrument Serif", Georgia, serif; margin: 18px 0 6px; }
-  .dir p { margin: 0; color: var(--mute); }
-  .go { display: inline-block; margin-top: 12px; font-weight: 600; border-bottom: 1px solid currentColor; }
-  .dir--une { display: grid; grid-template-columns: 1.6fr 1fr; gap: 32px; align-items: center; margin-bottom: 64px; }
-  .dir--une h2 { font-size: 44px; margin-top: 0; }
-  @media (max-width: 900px) { .dir--une { grid-template-columns: 1fr; gap: 0; } .dir--une h2 { font-size: 34px; margin-top: 18px; } }
-  .sub { font: 400 30px/1.1 "Instrument Serif", Georgia, serif; margin: 88px 0 24px; color: var(--mute); }
-  .grid--small h2 { font-size: 24px; }
-  .grid--small .dir { opacity: .8; }
-  footer { margin-top: 72px; color: var(--mute); font-size: 15px; max-width: 62ch; }
-  @media (max-width: 900px) { .grid { grid-template-columns: 1fr; gap: 44px; } }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 400 16px/1.5 Jost, system-ui, sans-serif; }
+  main { max-width: 1080px; margin: 0 auto; padding: 48px max(16px, env(safe-area-inset-left, 0px)) 80px; }
+  header { display: flex; align-items: center; gap: 20px; margin-bottom: 40px; }
+  header img { width: 88px; height: auto; }
+  h1 { font: 400 clamp(32px, 5vw, 48px)/1.05 Castoro, Georgia, serif; margin: 0; }
+  header p { margin: 4px 0 0; color: var(--mute); }
+  section { margin-top: 40px; }
+  h2 { font: 500 13px/1 Jost, sans-serif; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); margin: 0 0 12px; }
+  ul { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+  li { border-bottom: 1px solid var(--line); }
+  a { color: inherit; text-decoration: none; display: grid; grid-template-columns: 220px 1fr; gap: 16px; padding: 14px 4px; }
+  a:hover, a:focus-visible { background: #262220; outline: none; }
+  a:focus-visible { box-shadow: inset 0 0 0 2px var(--accent); }
+  b { font: 400 20px/1.3 Castoro, Georgia, serif; }
+  span { color: var(--mute); }
+  .new b::after { content: "nouveau"; margin-left: 10px; font: 500 11px/1 Jost, sans-serif; letter-spacing: .1em; text-transform: uppercase; color: var(--bg); background: var(--accent); padding: 3px 6px; border-radius: 3px; vertical-align: 3px; }
+  @media (max-width: 640px) { a { grid-template-columns: 1fr; gap: 2px; } }
 </style>
 </head>
 <body>
 <main>
-  <h1>MC Cuisine,<br>les versions</h1>
-  <p class="intro">Les dernières versions, sur le modèle du site de Marché Noir et avec le logo vectorisé. Plus bas, les pistes précédentes.</p>
-  <a class="dir dir--une" href="h/">
-    <div class="shot"><img src="shots/h.jpg" alt="Aperçu du site multipage"></div>
+  <header>
+    <img src="logo/svg/mc-cuisine-creme.svg" alt="Logo MC Cuisine">
     <div>
-      <h2>H. Le site complet</h2>
-      <p>Quatre pages comme chez Marché Noir : accueil, à propos, prestations, contact. Une vidéo en haut de chaque page.</p>
-      <span class="go">Ouvrir la version H</span>
+      <h1>MC Cuisine</h1>
+      <p>Toutes les pages du projet, en local.</p>
     </div>
-  </a>
-  <a class="dir dir--une" href="i/">
-    <div class="shot"><img src="shots/i.jpg" alt="Aperçu de la version allégée"></div>
-    <div>
-      <h2>I. La version courte</h2>
-      <p>Une seule page, moins de 100 mots : le cuisinier, l'outil, la viande, la tablée, et le devis.</p>
-      <span class="go">Ouvrir la version I</span>
-    </div>
-  </a>
-  <a class="dir dir--une" href="g/">
-    <div class="shot"><img src="shots/g.jpg" alt="Aperçu de la direction La Maison"></div>
-    <div>
-      <h2>G. La Maison</h2>
-      <p>Première version inspirée de Marché Noir, avant le logo.</p>
-      <span class="go">Ouvrir la direction G</span>
-    </div>
-  </a>
-  <div class="grid">
-    <a class="dir" href="d/">
-      <div class="shot"><img src="shots/d.jpg" alt="Aperçu de la direction La nuit d'avant"></div>
-      <h2>D. La nuit d'avant</h2>
-      <p>Une journée de fête racontée heure par heure depuis le smoker, de 4 heures du matin au dîner.</p>
-      <span class="go">Ouvrir la direction D</span>
-    </a>
-    <a class="dir" href="e/">
-      <div class="shot"><img src="shots/e.jpg" alt="Aperçu de la direction Plan-séquence"></div>
-      <h2>E. Plan-séquence</h2>
-      <p>Un seul mouvement de caméra : on plonge dans la machine, dans le feu, jusqu'à la viande.</p>
-      <span class="go">Ouvrir la direction E</span>
-    </a>
-    <a class="dir" href="f/">
-      <div class="shot"><img src="shots/f.jpg" alt="Aperçu de la direction La bande-annonce"></div>
-      <h2>F. La bande-annonce</h2>
-      <p>Bandes noires, cartons de film, montage qui s'accélère. Le générique de fin sert à réserver.</p>
-      <span class="go">Ouvrir la direction F</span>
-    </a>
-  </div>
-  <h3 class="sub">Les premières pistes</h3>
-  <div class="grid grid--small">
-    <a class="dir" href="a/">
-      <div class="shot"><img src="shots/a.jpg" alt="Aperçu de la direction Fumée"></div>
-      <h2>A. Fumée</h2>
-      <p>Nocturne et cinématographique. On entre dans la fumée, la viande se déchire sous la braise.</p>
-      <span class="go">Ouvrir la direction A</span>
-    </a>
-    <a class="dir" href="b/">
-      <div class="shot"><img src="shots/b.jpg" alt="Aperçu de la direction L'Atelier"></div>
-      <h2>B. L'Atelier</h2>
-      <p>La machine en héroïne. Acier noir, orange chantier, fiche technique qui se dessine au scroll.</p>
-      <span class="go">Ouvrir la direction B</span>
-    </a>
-    <a class="dir" href="c/">
-      <div class="shot"><img src="shots/c.jpg" alt="Aperçu de la direction La grande tablée"></div>
-      <h2>C. La grande tablée</h2>
-      <p>Lumineuse et festive. Le Texas au milieu d'une fête basque, pensée pour les mariés comme pour les entreprises.</p>
-      <span class="go">Ouvrir la direction C</span>
-    </a>
-  </div>
-  <footer>Version de travail, non référencée. Les coordonnées, la ville et les tarifs sont à compléter. Photos prises lors d'un événement de Mika, retouchées ; certains plans (la nuit, le feu, l'aube, la tablée du soir, le brisket tranché, la viande qu'on déchire) sont générés à partir des vraies photos.</footer>
+  </header>
+
+  <section>
+    <h2>Les versions à montrer à Mika</h2>
+    <ul>
+      <li class="new"><a href="site/h/"><b>H. Multipage</b><span>Sur le modèle de Marché Noir : accueil, à propos, prestations, contact, une vidéo par page.</span></a></li>
+      <li><a href="site/h/a-propos/"><b>H. À propos</b><span>Mika, son outil, les produits et les producteurs (à compléter).</span></a></li>
+      <li><a href="site/h/prestations/"><b>H. Prestations</b><span>Formats, le spectacle, ce qu'on mange, questions.</span></a></li>
+      <li><a href="site/h/contact/"><b>H. Contact</b><span>Formulaire de devis et zone desservie.</span></a></li>
+      <li class="new"><a href="site/i/"><b>I. Version allégée</b><span>Une seule page, moins de 100 mots, avec le vrai logo.</span></a></li>
+      <li><a href="site/g/"><b>G. La Maison</b><span>Première version inspirée de Marché Noir.</span></a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Le logo</h2>
+    <ul>
+      <li class="new"><a href="logo/planche.html"><b>Planche du logo</b><span>Toutes les versions vectorisées sur fond clair, sombre et photo.</span></a></li>
+      <li><a href="logo/README.md"><b>Fichiers du logo</b><span>Liste des SVG et PNG, couleurs, usages, points à valider.</span></a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Les pistes précédentes</h2>
+    <ul>
+      <li><a href="site/index.html"><b>Page publiée</b><span>Celle du lien envoyé : harryjmg.fr/mika-bon-site.</span></a></li>
+      <li><a href="site/d/"><b>D. La nuit d'avant</b><span>Une journée racontée heure par heure.</span></a></li>
+      <li><a href="site/e/"><b>E. Plan-séquence</b><span>Un seul mouvement de caméra, de l'aube à la viande.</span></a></li>
+      <li><a href="site/f/"><b>F. La bande-annonce</b><span>Bandes noires, cartons de film.</span></a></li>
+      <li><a href="site/a/"><b>A. Fumée</b><span>Première piste, sombre et cinématographique.</span></a></li>
+      <li><a href="site/b/"><b>B. L'Atelier</b><span>La machine en héroïne.</span></a></li>
+      <li><a href="site/c/"><b>C. La grande tablée</b><span>Lumineuse, linge basque.</span></a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Documents</h2>
+    <ul>
+      <li><a href="README.md"><b>README</b><span>Organisation du dossier et ce qu'il reste à demander à Mika.</span></a></li>
+      <li><a href="docs/ETUDE-MARCHE.md"><b>Étude de marché</b><span>Concurrents, prix, angles.</span></a></li>
+      <li><a href="generation/prompts.md"><b>Prompts des images</b><span>Pour régénérer les plans créés.</span></a></li>
+    </ul>
+  </section>
 </main>
 </body>
 </html>

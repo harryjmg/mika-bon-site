@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MC Cuisine, kit de logo</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<style>
+  :root { --creme: #FFEEDF; --cuivre: #B5562B; --charbon: #2A2421; --clair: #F6F1EA; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 15px/1.5 Georgia, serif; background: var(--clair); color: var(--charbon); }
+  header { padding: 40px 48px 8px; }
+  h1 { margin: 0; font-size: 28px; letter-spacing: .04em; }
+  h2 { margin: 40px 48px 12px; font-size: 18px; letter-spacing: .06em; text-transform: uppercase; color: var(--cuivre); }
+  p.note { margin: 6px 0 0; color: #6b5f57; }
+  .grille { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; padding: 0 48px; }
+  .case { border-radius: 10px; padding: 28px; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 290px; }
+  .case img { max-width: 100%; max-height: 240px; }
+  .case.large { grid-column: span 2; }
+  .case.large img { max-height: 150px; }
+  .case span { margin-top: 14px; font: 12px/1.2 ui-monospace, Menlo, monospace; opacity: .75; }
+  .blanc { background: #fff; }
+  .sombre { background: #171310; color: var(--creme); }
+  .photo { background: linear-gradient(rgba(0,0,0,.35), rgba(0,0,0,.35)), url(planche-fond.jpg) center/cover; color: #fff; }
+  .couleurs { display: flex; gap: 16px; padding: 0 48px; flex-wrap: wrap; }
+  .pastille { width: 170px; border-radius: 10px; overflow: hidden; background: #fff; }
+  .pastille div { height: 80px; }
+  .pastille p { margin: 0; padding: 8px 12px; font: 12px/1.4 ui-monospace, Menlo, monospace; }
+  .petits { display: flex; gap: 28px; align-items: end; padding: 0 48px; }
+  .petits figure { margin: 0; text-align: center; font: 12px ui-monospace, Menlo, monospace; }
+  footer { height: 48px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>MC Cuisine, kit de logo</h1>
+  <p class="note">Versions rouillées détourées dans <code>logo/rouille</code>, versions vectorielles dans <code>logo/svg</code> et <code>logo/png</code>.</p>
+</header>
+
+<h2>Rouille, avec effets (PNG et WebP transparents)</h2>
+<div class="grille">
+  <div class="case blanc"><img src="rouille/mc-cuisine-rouille-1024.png" alt=""><span>rouille</span></div>
+  <div class="case sombre"><img src="rouille/mc-cuisine-rouille-1024.png" alt=""><span>rouille</span></div>
+  <div class="case photo"><img src="rouille/mc-cuisine-rouille-1024.png" alt=""><span>rouille sur photo</span></div>
+  <div class="case sombre"><img src="rouille/mc-cuisine-rouille-fumee-1024.png" alt=""><span>rouille-fumee</span></div>
+  <div class="case photo"><img src="rouille/mc-cuisine-rouille-fumee-1024.png" alt=""><span>rouille-fumee sur photo</span></div>
+  <div class="case blanc"><img src="rouille/mc-cuisine-rouille-fumee-sombre-1024.png" alt=""><span>rouille-fumee-sombre</span></div>
+</div>
+
+<h2>Emblème vectoriel</h2>
+<div class="grille">
+  <div class="case blanc"><img src="svg/mc-cuisine-noir.svg" alt=""><span>mc-cuisine-noir</span></div>
+  <div class="case blanc"><img src="svg/mc-cuisine-deux-tons.svg" alt=""><span>mc-cuisine-deux-tons</span></div>
+  <div class="case sombre"><img src="svg/mc-cuisine-creme.svg" alt=""><span>mc-cuisine-creme</span></div>
+  <div class="case sombre"><img src="svg/mc-cuisine-deux-tons-sombre.svg" alt=""><span>mc-cuisine-deux-tons-sombre</span></div>
+  <div class="case photo"><img src="svg/mc-cuisine-creme.svg" alt=""><span>creme sur photo</span></div>
+  <div class="case photo"><img src="svg/mc-cuisine-deux-tons-sombre.svg" alt=""><span>deux-tons-sombre sur photo</span></div>
+</div>
+
+<h2>Monogramme</h2>
+<div class="grille">
+  <div class="case blanc"><img src="svg/monogramme-noir.svg" alt=""><span>monogramme-noir</span></div>
+  <div class="case blanc"><img src="svg/monogramme-cuivre.svg" alt=""><span>monogramme-cuivre</span></div>
+  <div class="case sombre"><img src="svg/monogramme-creme.svg" alt=""><span>monogramme-creme</span></div>
+  <div class="case photo"><img src="svg/monogramme-creme.svg" alt=""><span>creme sur photo</span></div>
+</div>
+
+<h2>Horizontal</h2>
+<div class="grille">
+  <div class="case blanc large"><img src="svg/horizontal-deux-tons.svg" alt=""><span>horizontal-deux-tons</span></div>
+  <div class="case sombre large"><img src="svg/horizontal-deux-tons-sombre.svg" alt=""><span>horizontal-deux-tons-sombre</span></div>
+  <div class="case blanc large"><img src="svg/horizontal-noir.svg" alt=""><span>horizontal-noir</span></div>
+  <div class="case photo large"><img src="svg/horizontal-creme.svg" alt=""><span>horizontal-creme sur photo</span></div>
+</div>
+
+<h2>Petits formats</h2>
+<div class="petits">
+  <figure><img src="favicon.svg" width="16" height="16" alt=""><figcaption>16</figcaption></figure>
+  <figure><img src="favicon-32.png" width="32" height="32" alt=""><figcaption>32</figcaption></figure>
+  <figure><img src="favicon.svg" width="64" height="64" alt=""><figcaption>64</figcaption></figure>
+  <figure><img src="apple-touch-icon.png" width="90" height="90" alt="" style="border-radius:20px"><figcaption>apple-touch 180</figcaption></figure>
+</div>
+
+<h2>Couleurs</h2>
+<div class="couleurs">
+  <div class="pastille"><div style="background:#B5562B"></div><p>Cuivre rouillé<br>#B5562B</p></div>
+  <div class="pastille"><div style="background:#2A2421"></div><p>Charbon<br>#2A2421</p></div>
+  <div class="pastille"><div style="background:#FFEEDF;border-bottom:1px solid #eee"></div><p>Crème<br>#FFEEDF</p></div>
+  <div class="pastille"><div style="background:#000"></div><p>Noir<br>#000000</p></div>
+</div>
+<footer></footer>
+</body>
+</html>
