@@ -108,7 +108,7 @@
     const d = new FormData(form);
     const date = d.get('date') ? new Date(d.get('date') + 'T12:00').toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' }) : '';
     const lines = [
-      'Bonjour Mika, je voudrais un devis.',
+      'Bonjour, je voudrais un devis.',
       '',
       `Événement : ${d.get('type')}`,
       `Date : ${date}`,
