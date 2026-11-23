@@ -186,7 +186,7 @@ ul, ol { padding: 0; list-style: none; }
    donc pas de trait. Elle passe au-dessus du temps I (z-index 4) et sous le texte du hero (z-index 5). */
 .hero::after {
   content: ""; position: absolute; left: 0; right: 0; z-index: 4; pointer-events: none;
-  --band: clamp(200px, 24vw, 340px);
+  --band: clamp(120px, 12vw, 190px);
   height: var(--band); bottom: calc(var(--band) / -2);
   background: var(--fog, none) 0 50% / auto 100% repeat-x;
   opacity: .42;
@@ -216,15 +216,14 @@ ul, ol { padding: 0; list-style: none; }
 .hero__dot { display: inline-block; width: 5px; height: 5px; border-radius: 50%; background: var(--coral); vertical-align: middle; margin: -.2em .9em 0; }
 .hero__down {
   position: absolute; z-index: 5; bottom: clamp(20px, calc(3.6 * var(--hh)), 40px); left: 50%; transform: translateX(-50%);
-  width: 58px; height: 58px; display: grid; place-items: center;
-  border: 1px solid rgba(255,238,223,.6); border-radius: 50%;
-  color: var(--cream); background: rgba(20,16,14,.25);
-  transition: background-color .3s ease, border-color .3s ease, color .3s ease;
+  width: 48px; height: 48px; display: grid; place-items: center;
+  color: var(--cream); filter: drop-shadow(0 1px 6px rgba(0,0,0,.6));
+  transition: color .3s ease;
 }
-.hero__down:hover { background: var(--cream); border-color: var(--cream); color: var(--coal); }
+.hero__down:hover { color: var(--coral); }
 /* Chevron qui rebondit lentement : on comprend tout de suite qu'il faut descendre */
 .hero__down svg {
-  width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round;
+  width: 32px; height: 32px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round;
   animation: nudge 2.6s cubic-bezier(.45,0,.55,1) infinite;
 }
 @keyframes nudge { 0%, 100% { transform: translateY(-3px); } 50% { transform: translateY(5px); } }
@@ -232,16 +231,16 @@ ul, ol { padding: 0; list-style: none; }
 /* Bouton « En savoir plus » : .btn .btn--line en version claire, posé sur la vidéo */
 .hero__cta {
   margin-top: clamp(24px, calc(3.6 * var(--hh)), 48px);
-  border-color: rgba(255,238,223,.7);
+  border-color: var(--coral); border-radius: 6px; /* bords légèrement arrondis, liseré corail comme les filets du titre */
   background: rgba(20,16,14,.22);
   text-shadow: none;
 }
-.hero__cta:hover { background: var(--cream); border-color: var(--cream); color: var(--coal); }
+.hero__cta:hover { background: var(--coral); border-color: var(--coral); color: var(--white); }
 
 /* Fumée qui monte du bas du hero vers le temps I (canvas animé par fumee.js) */
 .hero__smoke {
   position: absolute; left: 0; z-index: 4; pointer-events: none;
-  --smk: clamp(300px, 46vh, 480px);
+  --smk: clamp(170px, 26vh, 280px);
   width: 100%; height: var(--smk); bottom: calc(var(--smk) * -.28); /* centrée un peu sous la jonction : elle naît du charbon et monte dans le hero */
   opacity: 0; transition: opacity 2.4s ease;
   -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 34%, #000 62%, transparent 100%);
@@ -458,7 +457,7 @@ ul, ol { padding: 0; list-style: none; }
   .top { padding-left: 16px; padding-right: 16px; }
   .nav a, .top.is-solid .nav a { padding: 8px 0; }
   .hero__sub { font-size: 11.5px; letter-spacing: .16em; }
-  .hero__down { width: 50px; height: 50px; }
+  .hero__down { width: 44px; height: 44px; }
   .top { padding-top: 14px; }
   .nav { --nav-gap: 16px; padding: 2px 8px; }
   .nav a { font-size: 11px; letter-spacing: .16em; }

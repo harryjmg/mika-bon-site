@@ -54,12 +54,12 @@
     p.vy = -(7 + rnd() * 10);              // montée, en px par seconde (demi-résolution)
     p.vx = (rnd() - .35) * 5;              // dérive, un peu vers la droite
     p.sway = 6 + rnd() * 10; p.ph = rnd() * 6.28; p.fq = .15 + rnd() * .25;
-    p.r0 = 46 + rnd() * 40; p.r1 = p.r0 * (1.8 + rnd() * .8);
+    p.r0 = 34 + rnd() * 28; p.r1 = p.r0 * (1.8 + rnd() * .8);
     p.rot = (rnd() - .5) * .6; p.vr = (rnd() - .5) * .05; // volutes plutôt droites : elles montent
     p.life = 0; p.max = 12 + rnd() * 10;   // secondes
     if (fresh) p.life = rnd() * p.max * .7;
     p.s = sprites[(rnd() * sprites.length) | 0];
-    p.a = .26 + rnd() * .26;
+    p.a = .18 + rnd() * .2;
     p.sx = (rnd() < .5 ? -1 : 1) * (1 + rnd() * .5); // largeur variable, parfois en miroir
     return p;
   };
