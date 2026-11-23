@@ -1,0 +1,17 @@
+/* MC Cuisine, fin de page : devis, questions, mosaïque, pied de page.
+   Défaut corrigé : dans chaque .fog, la seconde couche (top 25 %, hauteur 90 %) déborde de 15 % sous sa section.
+   Son fondu tombe hors du cadre, et overflow: hidden la coupe en pleine opacité : le bas du devis finissait
+   en gris (60) quand le haut des questions repartait du charbon (31). Une marche nette sur toute la largeur.
+   Correction : un fondu posé sur le conteneur du brouillard, qui ramène chaque section au charbon pur à ses
+   deux bords. Les fonds se raccordent sans marche. Et un seul padding entre devis et questions au lieu de deux. */
+
+#contact > .fog,
+.fin-faq > .fog,
+.foot > .fog {
+  -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 22%, #000 78%, transparent 100%);
+  mask-image: linear-gradient(180deg, transparent 0%, #000 22%, #000 78%, transparent 100%);
+}
+
+/* Un seul espace entre le formulaire et les questions : la moitié du padding commun de chaque côté */
+#contact.pad { padding-bottom: calc(clamp(90px, 11vw, 160px) / 2); }
+.fin-faq.pad { padding-top: calc(clamp(90px, 11vw, 160px) / 2); }
