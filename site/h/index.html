@@ -13,7 +13,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Trirong:ital,wght@0,500;0,600;0,700;1,400&family=Castoro:ital@0;1&family=Jost:wght@400;500&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="../img/ouverture-aube-poster.jpg" fetchpriority="high">
 <link rel="stylesheet" href="style.css?v=18">
-<link rel="stylesheet" href="maison.css?v=22">
+<link rel="stylesheet" href="maison.css?v=23">
 <link rel="stylesheet" href="fumoir.css?v=7">
 <link rel="stylesheet" href="moment.css?v=13">
 <link rel="stylesheet" href="tarifs.css?v=5">
@@ -67,15 +67,14 @@
   <!-- Trois temps en plans plein cadre : le chef, le fumoir, le moment (CSS dans maison.css, révélations dans maison.js) -->
   <section class="dark" id="maison" aria-labelledby="maison-title">
     <!-- Temps I : la phrase d'ouverture et le chef, photo incrustée sur un fond vidéo (img/maison-remorque.mp4 : apropos.mp4 de 7,2 à 9,6 s, la remorque en plein jour, ralentie, floutée, en aller-retour, sans son) -->
-    <section class="temps chef" id="chef" aria-labelledby="chef-title">
-      <h2 class="sec-title" id="chef-title">Le chef</h2>
+    <section class="temps chef" id="chef" aria-labelledby="maison-title">
+      <h2 class="sec-title" id="maison-title">MC Cuisine, c'est le plaisir de faire plaisir.</h2>
       <video class="chef__video" muted loop playsinline preload="none" poster="../img/maison-remorque-poster.jpg" aria-hidden="true" width="1280" height="720">
         <source src="../img/maison-remorque.mp4" type="video/mp4">
       </video>
       <div class="chef__veil" aria-hidden="true"></div>
       <div class="fog" aria-hidden="true"><i></i><i></i></div>
       <div class="chef__grid wrap">
-        <p class="chef__title" id="maison-title">MC Cuisine, c'est le plaisir de faire plaisir.</p>
         <figure class="chef__photo">
           <img src="../img/mika-tablier-mc-1.jpg" alt="Mika en tablier MC Cuisine, gants à la main, devant sa remorque-fumoir qui fume dans l'herbe" loading="lazy" width="1536" height="1024">
         </figure>
