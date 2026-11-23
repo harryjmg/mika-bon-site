@@ -14,9 +14,9 @@
 <link rel="preload" as="image" href="../img/ouverture-aube-poster.jpg" fetchpriority="high">
 <link rel="stylesheet" href="style.css?v=19">
 <link rel="stylesheet" href="maison.css?v=23">
-<link rel="stylesheet" href="fumoir.css?v=7">
+<link rel="stylesheet" href="fumoir.css?v=11">
 <link rel="stylesheet" href="moment.css?v=13">
-<link rel="stylesheet" href="tarifs.css?v=5">
+<link rel="stylesheet" href="tarifs.css?v=8">
 <link rel="stylesheet" href="sections.css?v=1">
 <link rel="stylesheet" href="fin.css?v=1">
 <script>document.documentElement.classList.add("js")</script>
@@ -86,8 +86,8 @@
       </div>
     </section>
 
-    <!-- Temps II : le fumoir. Nuit bleue, la photo en insert à droite, le texte dans le noir à gauche,
-         un gros plan de la machine dans la fumée posé à cheval. CSS dans fumoir.css, révélation dans fumoir.js. -->
+    <!-- Temps II : le fumoir. Nuit bleue ; la photo, grande, file jusqu'au bord droit (l'inverse du chef) ;
+         le texte part de la nuit à gauche et mord sur le ciel, au-dessus du chef et du feu. CSS dans fumoir.css, révélation dans fumoir.js. -->
     <section class="fumoir" id="fumoir" aria-labelledby="fumoir-title">
       <h2 class="sec-title" id="fumoir-title">Le fumoir</h2>
       <div class="fumoir__glow" aria-hidden="true"></div>
@@ -97,9 +97,6 @@
         </div>
         <figure class="fumoir__photo">
           <img src="../img/fumoir-nuit.jpg" alt="De nuit, le chef alimente le foyer de sa remorque-fumoir, le feu rougeoie et la fumée monte dans le ciel" loading="lazy" width="1678" height="937">
-        </figure>
-        <figure class="fumoir__detail">
-          <img src="../img/fumee.jpg" alt="Gros plan sur un couvercle noir du fumoir, son thermomètre et sa poignée en bois, dans une épaisse fumée blanche" loading="lazy" width="1800" height="1200">
         </figure>
       </div>
     </section>
@@ -121,15 +118,10 @@
     <div class="fog tarifs__fog" aria-hidden="true"><i></i><i></i></div>
     <img class="tarifs__img" src="../img/feu.jpg" alt="Les bûches brûlent dans le foyer du fumoir, braises et étincelles" loading="lazy" width="2000" height="1116">
     <h2 class="sec-title" id="tarifs-title">Les tarifs</h2>
-    <!-- Condensé des quatre phrases de Mika : chaque mot des chiffres clés vient de son texte, la phrase est la sienne. Rien d'inventé. -->
+    <!-- Texte du client, repris de la réponse « Combien ça coûte ? » de la FAQ. Rien d'inventé. -->
     <div class="tarifs__text">
-      <ul class="tarifs__keys">
-        <li><span class="tarifs__pre">À partir de</span> <strong class="tarifs__big">25&nbsp;€</strong> <span class="tarifs__post">par personne</span></li>
-        <li><span class="tarifs__pre">Minimum</span> <strong class="tarifs__big">70</strong> <span class="tarifs__post">invités</span></li>
-        <li><span class="tarifs__pre">Un</span> <strong class="tarifs__big">devis</strong> <span class="tarifs__post">précis</span></li>
-      </ul>
-      <p class="tarifs__p">Selon le nombre de convives, la qualité des produits et la variété des mets choisis, nos tarifs peuvent varier.</p>
-      <a class="btn btn--coral tarifs__btn" href="#contact">Demander un devis</a>
+      <p class="tarifs__p">Ticket moyen <span class="tarifs__num">entre 25 et 40&nbsp;€ par personne</span>. Plus le nombre de convives augmente, plus les tarifs baissent. De&nbsp;70 à 600&nbsp;personnes.</p>
+      <a class="btn btn--line tarifs__btn" href="#contact">Demander un devis</a>
     </div>
   </section>
 
@@ -282,6 +274,6 @@
 <script src="main.js?v=8" defer></script>
 <script src="maison.js?v=2" defer></script>
 <script src="fumee.js?v=8" defer></script>
-<script src="fumoir.js?v=1" defer></script>
+<script src="fumoir.js?v=2" defer></script>
 </body>
 </html>

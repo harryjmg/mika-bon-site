@@ -2,7 +2,7 @@
    Jonction : le temps III (la tablée) fond au charbon (moment.css) ; les tarifs s'ouvrent sur ce même charbon,
    un brouillard traverse la frontière, et le feu monte du bas de la section. Aucune coupe nette entre deux photos.
    Composition : sur l'axe central, comme le temps III. Le titre est le composant commun .sec-title (sections.css).
-   Trois repères en grand (25 €, 70, devis), puis une seule phrase de Mika, puis le bouton.
+   Un seul paragraphe sobre (le texte du client, repris de la FAQ), puis un bouton à liseré.
 
    Échelle d'espacement : la même base --u que les temps I et III (6 px à 375, 8 px à 1440, 10 px à 2560)
    et ses multiples x1, x2, x3, x5, x8, x13. */
@@ -18,7 +18,7 @@
   position: relative; z-index: 1; /* au-dessus du bas du temps III : le brouillard déborde sur la jonction */
   background: var(--coal);
   display: flex; flex-direction: column; align-items: center;
-  padding: var(--t13) var(--gut) 0;
+  padding: calc(var(--t13) + var(--t5)) var(--gut) 0; /* sous le titre de section, avec de l'air */
 }
 
 /* Le feu, sous le texte, sur toute la largeur ; son haut se fond dans le charbon et remonte sous le lien */
@@ -29,8 +29,9 @@
   height: min(62vh, 56vw); height: min(62svh, 56vw);
   object-fit: cover; object-position: 55% 72%;
   filter: saturate(.9) brightness(.85);
-  -webkit-mask-image: linear-gradient(180deg, transparent 0%, rgba(0,0,0,.4) 25%, #000 60%);
-  mask-image: linear-gradient(180deg, transparent 0%, rgba(0,0,0,.4) 25%, #000 60%);
+  /* fondu en haut vers la tablée, et en bas vers le charbon du devis : pas de bord net */
+  -webkit-mask-image: linear-gradient(180deg, transparent 0%, rgba(0,0,0,.4) 25%, #000 60%, #000 80%, transparent 100%);
+  mask-image: linear-gradient(180deg, transparent 0%, rgba(0,0,0,.4) 25%, #000 60%, #000 80%, transparent 100%);
 }
 
 /* Le brouillard du site, à cheval sur la jonction : il commence dans la tablée et finit dans les tarifs */
@@ -46,58 +47,32 @@
 .tarifs__text {
   order: 1;
   position: relative; z-index: 2;
-  width: 100%; max-width: 1280px;
+  width: 100%;
   font-size: var(--ref);
   display: flex; flex-direction: column; align-items: center;
   text-align: center;
 }
 
-/* Les trois repères, lisibles d'un coup d'oeil : trois colonnes égales séparées par des filets corail.
-   Les chiffres sortent de l'échelle du texte courant (ce sont des chiffres, pas des phrases). */
-.tarifs__keys {
-  width: 100%;
-  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-.tarifs__keys li {
-  display: flex; flex-direction: column; align-items: center;
-  padding: var(--t3) var(--t3);
-}
-.tarifs__keys li + li { border-left: 1px solid rgba(227,109,84,.5); }
-.tarifs__pre,
-.tarifs__post {
-  font: 600 clamp(13px, calc(.5vw + 9px), 22px)/1.2 var(--title);
-  letter-spacing: .2em; text-transform: uppercase;
-  color: var(--coral);
-}
-.tarifs__big {
-  display: block;
-  margin-block: var(--t2);
-  font: 600 clamp(48px, calc(4.6vw + 22px), 140px)/1 var(--title);
-  letter-spacing: .02em;
-  color: var(--cream);
-  white-space: nowrap;
-  text-shadow: 0 2px 30px rgba(0,0,0,.5);
-}
-
-/* La phrase de Mika, à la taille de référence */
+/* Un seul paragraphe, sobre, à la taille de référence ; le montant en crème plein, le reste un ton en dessous */
 .tarifs__p {
-  max-width: 30em;
-  margin-top: var(--t8);
-  font: 400 1em/1.3 var(--serif);
-  color: rgba(255,238,223,.88);
+  max-width: 26em; /* environ 50 caractères par ligne */
+  font: 400 1em/1.4 var(--serif);
+  color: rgba(255,238,223,.78);
   text-wrap: pretty;
   text-shadow: 0 2px 24px rgba(0,0,0,.5);
 }
+.tarifs__num { color: var(--cream); white-space: nowrap; }
 
-.tarifs__btn { margin-top: var(--t5); }
+/* Bouton discret : le liseré corail aux coins légèrement arrondis du bouton du hero */
+.tarifs__btn {
+  margin-top: var(--t5);
+  border-color: var(--coral); border-radius: 6px;
+  background: rgba(20,16,14,.22);
+}
+.tarifs__btn:hover, .tarifs__btn:focus-visible { background: var(--coral); border-color: var(--coral); color: var(--white); }
 
 @media (max-width: 720px) {
   .tarifs__img { height: auto; aspect-ratio: 4 / 3; object-position: 55% 80%; }
   .tarifs__text { font-size: 22px; }
-  /* Mobile : les trois repères l'un sous l'autre, séparés par un filet horizontal */
-  .tarifs__keys { grid-template-columns: minmax(0, 1fr); }
-  .tarifs__keys li { padding: var(--t3) 0; }
-  .tarifs__keys li + li { border-left: 0; border-top: 1px solid rgba(227,109,84,.5); }
-  .tarifs__big { font-size: 56px; margin-block: var(--u); }
-  .tarifs__p { margin-top: var(--t5); }
+  .tarifs__num { white-space: normal; }
 }
