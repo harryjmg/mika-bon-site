@@ -1,0 +1,45 @@
+/* MC Cuisine : repères de section, communs aux quatre blocs (le chef, le fumoir, les moments, les tarifs).
+   Un seul composant : Trirong en capitales espacées, même taille, centré en haut du bloc, à la même distance
+   du bord, entre deux filets corail. Il remplace les chiffres romains I, II, III.
+   Chaque bloc garde sa propre composition dessous. */
+
+.sec-title {
+  --u: clamp(6px, calc(.18vw + 5.4px), 10px);
+  position: absolute; z-index: 4;
+  top: calc(var(--u) * 8); left: 0; right: 0;
+  margin: 0; padding: 0 var(--gut);
+  display: flex; align-items: center; justify-content: center; gap: calc(var(--u) * 2);
+  font: 600 clamp(16px, calc(.75vw + 11px), 34px)/1.2 var(--title);
+  letter-spacing: .26em; text-transform: uppercase;
+  color: var(--cream);
+  text-shadow: 0 1px 3px rgba(0,0,0,.6), 0 2px 18px rgba(0,0,0,.5);
+  pointer-events: none;
+}
+.sec-title::before,
+.sec-title::after {
+  content: ""; flex: 0 0 calc(var(--u) * 5); height: 1px;
+  background: var(--coral);
+}
+/* l'interlettrage ajoute un blanc après la dernière lettre : on le reprend pour rester sur l'axe */
+.sec-title::after { margin-left: -.26em; }
+
+/* ---------- Nav : cinq liens ----------
+   Mobile : l'article tombe (« Chef », « Fumoir », « Moments ») et, si la place manque encore (360 px),
+   la nav défile à l'horizontale, sans barre visible. */
+@media (max-width: 720px) {
+  .top .nav .nav__art { display: none; }
+  .top .nav { --nav-gap: 14px; max-width: 100%; }
+  .top .nav a { letter-spacing: .12em; }
+  .top.is-solid .nav {
+    --nav-gap: 12px;
+    flex: 1 1 auto; min-width: 0; justify-content: safe flex-end;
+    margin-left: 12px;
+    overflow-x: auto; scrollbar-width: none;
+  }
+  .top.is-solid .nav::-webkit-scrollbar { display: none; }
+}
+@media (max-width: 380px) {
+  .top .nav { --nav-gap: 11px; }
+  .top .nav a { letter-spacing: .08em; }
+  .top.is-solid .nav { --nav-gap: 10px; }
+}

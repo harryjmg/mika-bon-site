@@ -1,4 +1,4 @@
-/* Mika Bon, direction G */
+/* MC Cuisine, direction G */
 (() => {
   const root = document.documentElement;
   root.classList.add('js');
@@ -69,9 +69,8 @@
   /* ---------- Formulaire : WhatsApp ou e-mail pré-rempli ---------- */
   const form = document.getElementById('quote-form');
   const err = document.getElementById('form-error');
-  // À REMPLACER : numéro et adresse réels
-  const WA = '33600000000';
-  const MAIL = 'contact@mikabon.fr';
+  const WA = '33767207613';
+  const MAIL = 'contact@mc-cuisine.fr';
 
   form.addEventListener('submit', e => {
     e.preventDefault();

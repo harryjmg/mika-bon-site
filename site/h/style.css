@@ -1,5 +1,5 @@
-/* MC Cuisine, direction H : site multipage
-   Reprend la palette et les typos de la direction G (charbon, crème, corail ; Castoro Titling, Castoro, Jost). */
+/* MC Cuisine, direction H : une seule page, liens ancre
+   Palette charbon, crème, corail. Titres en Trirong, la police libre la plus proche des lettres du logo ; texte en Castoro et Jost. */
 
 :root {
   --coal: #1D1D1D;
@@ -10,7 +10,7 @@
   --smoke: #A39C95;
   --ink-soft: #4A4542;
 
-  --title: "Castoro Titling", "Times New Roman", serif;
+  --title: "Trirong", "Times New Roman", serif;
   --serif: "Castoro", Georgia, serif;
   --sans: "Jost", "Futura", system-ui, sans-serif;
 
@@ -44,49 +44,43 @@ ul, ol { padding: 0; list-style: none; }
 .wrap { width: 100%; max-width: var(--max); margin: 0 auto; padding: 0 var(--gut); }
 .nw { white-space: nowrap; }
 
-/* ---------- En-tête : logo centré, navigation dessous ---------- */
+/* ---------- En-tête : nav en bandeau fin, centrée ; le logo n'apparaît qu'avec la barre crème ---------- */
 .top {
   position: absolute; top: 0; left: 0; right: 0; z-index: 50;
-  display: flex; flex-direction: column; align-items: center;
-  padding: 22px var(--gut) 8px;
+  padding: 22px var(--gut);
   color: var(--cream);
   transition: background-color .35s ease, padding .35s ease, color .35s ease;
 }
 .js .top { position: fixed; }
 .top.is-solid {
   background: var(--cream); color: var(--coal);
-  padding-top: 8px; padding-bottom: 2px;
+  padding-top: 8px; padding-bottom: 8px;
   box-shadow: 0 1px 0 rgba(29,29,29,.12);
 }
 .logo {
-  position: relative; display: block; width: 104px;
+  position: relative; display: block; flex: none;
   text-decoration: none; color: inherit;
   transition: width .35s ease;
-  filter: drop-shadow(0 2px 12px rgba(0,0,0,.4));
+  filter: drop-shadow(0 2px 14px rgba(0,0,0,.45));
 }
-.logo img { width: 100%; height: auto; transition: opacity .3s ease; }
+.logo img { display: block; width: 100%; height: auto; transition: opacity .3s ease; }
 .logo .logo__ink { position: absolute; inset: 0; opacity: 0; }
-.top.is-solid .logo { width: 54px; filter: none; }
+.top.is-solid .logo { filter: none; }
 .top.is-solid .logo__light { opacity: 0; }
 .top.is-solid .logo__ink { opacity: 1; }
-/* Texte de secours si le SVG ne charge pas : lu par les lecteurs d'écran via alt */
-.logo__text {
-  position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap;
-}
 
-.nav { display: flex; gap: 44px; margin-top: 12px; transition: margin .35s ease; }
-.top.is-solid .nav { margin-top: 2px; }
+.nav { display: flex; align-items: center; gap: 0 var(--nav-gap); --nav-gap: clamp(24px, 2.4vw, 52px); }
 .nav a {
-  font: 500 12px/1 var(--sans); letter-spacing: .2em; text-transform: uppercase;
-  text-decoration: none; padding: 10px 0; position: relative;
-  text-shadow: 0 1px 10px rgba(0,0,0,.35);
+  font: 500 clamp(13px, .6vw + 5px, 20px)/1 var(--sans); letter-spacing: .2em; text-transform: uppercase;
+  text-decoration: none; padding: 10px 0; position: relative; white-space: nowrap;
+  text-shadow: 0 1px 3px rgba(0,0,0,.75), 0 2px 18px rgba(0,0,0,.6);
 }
-.top.is-solid .nav a { text-shadow: none; }
+.top.is-solid .nav a { font-size: 12.5px; text-shadow: none; }
 .nav a::after {
   content: ""; position: absolute; left: 0; right: 100%; bottom: 4px; height: 1px; background: currentColor;
   transition: right .3s ease;
 }
-.nav a:hover::after, .nav a[aria-current="page"]::after { right: 0; }
+.nav a:hover::after, .nav a[aria-current]::after { right: 0; }
 
 /* ---------- Boutons et liens ---------- */
 .btn {
@@ -129,7 +123,7 @@ ul, ol { padding: 0; list-style: none; }
 .body + .body { margin-top: 14px; }
 .cream .body { color: var(--ink-soft); }
 .caps {
-  font: 400 clamp(30px, 4vw, 58px)/1.05 var(--title);
+  font: 600 clamp(30px, 4vw, 58px)/1.05 var(--title);
   letter-spacing: .14em;
   text-transform: uppercase;
 }
@@ -157,13 +151,26 @@ ul, ol { padding: 0; list-style: none; }
 .fog i:last-child { opacity: .3; top: 25%; height: 90%; animation: drift 70s linear infinite reverse; }
 @keyframes drift { from { transform: translate3d(0,0,0); } to { transform: translate3d(-50%,0,0); } }
 
-/* ---------- Ouverture vidéo ---------- */
+/* ---------- Ouverture vidéo : emblème, puis TRAITEUR, puis Fumoir au feu de bois ---------- */
+.top { display: flex; align-items: center; justify-content: center; padding-top: 18px; padding-bottom: 12px; }
+.top:not(.is-solid) .logo { display: none; } /* l'emblème est déjà au centre du hero */
+.top.is-solid { justify-content: space-between; }
+.top.is-solid .logo { width: 52px; }
+.nav { --nav-gap: clamp(26px, 2.8vw, 60px); border-top: 1px solid rgba(255,238,223,.4); border-bottom: 1px solid rgba(255,238,223,.4); padding: 4px clamp(8px, 1.4vw, 28px); }
+.top.is-solid .nav { border-color: transparent; padding: 0; }
+.nav a { font-size: clamp(12px, .45vw + 6px, 17px); letter-spacing: .26em; }
+
+/* Hauteur du hero plafonnée à 900 px : sur grand écran, la suite de la page apparaît dessous.
+   --hh vaut 1 % de cette hauteur ; les tailles du hero s'en servent à la place de vh. */
+:root { --hh: min(1vh, 9px); }
+@supports (height: 1svh) { :root { --hh: min(1svh, 9px); } }
 .hero {
-  position: relative; min-height: 100vh; min-height: 100svh;
+  position: relative; min-height: min(100vh, 900px); min-height: min(100svh, 900px);
   display: flex; flex-direction: column; align-items: center; justify-content: center;
-  padding: 240px var(--gut) 110px;
+  padding: 110px var(--gut);
   background: #2a1a12 center / cover no-repeat;
   overflow: hidden; text-align: center;
+  overflow-x: clip; overflow-y: visible; /* la fumée et le brouillard de la jonction débordent sous le hero ; sans overflow: clip, ils restent coupés au bord */
 }
 .hero--page { min-height: 80vh; min-height: 80svh; padding-bottom: 90px; }
 .hero__video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
@@ -171,42 +178,88 @@ ul, ol { padding: 0; list-style: none; }
 .hero__veil {
   position: absolute; inset: 0;
   background:
-    linear-gradient(180deg, rgba(20,16,14,.74) 0%, rgba(20,16,14,.2) 34%, rgba(20,16,14,.24) 64%, rgba(20,16,14,.8) 100%),
-    radial-gradient(ellipse at center, rgba(20,16,14,.1) 30%, rgba(20,16,14,.45) 100%);
+    radial-gradient(ellipse 60% 55% at 50% 52%, rgba(20,16,14,.58) 0%, rgba(20,16,14,.22) 70%, rgba(20,16,14,.1) 100%),
+    linear-gradient(180deg, rgba(20,16,14,.75) 0%, rgba(20,16,14,0) 22%, rgba(29,29,29,0) 58%, rgba(29,29,29,.75) 80%, #1D1D1D 94%);
+}
+/* Jonction avec le temps I (#maison) : le bas du hero et le haut du temps I sont en charbon plein.
+   Une seule bande de brouillard, centrée sur la jonction, déborde des deux côtés : rien à raccorder,
+   donc pas de trait. Elle passe au-dessus du temps I (z-index 4) et sous le texte du hero (z-index 5). */
+.hero::after {
+  content: ""; position: absolute; left: 0; right: 0; z-index: 4; pointer-events: none;
+  --band: clamp(200px, 24vw, 340px);
+  height: var(--band); bottom: calc(var(--band) / -2);
+  background: var(--fog, none) 0 50% / auto 100% repeat-x;
+  opacity: .42;
+  -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 38%, #000 52%, transparent 100%);
+  mask-image: linear-gradient(180deg, transparent 0%, #000 38%, #000 52%, transparent 100%);
 }
 .hero .fog { z-index: 1; }
-.hero__title {
-  position: relative; z-index: 2;
-  display: flex; flex-direction: column; align-items: center;
-  font: 400 clamp(44px, 10.4vw, 172px)/.98 var(--title);
-  letter-spacing: .1em; margin-right: -.1em;
-  text-transform: uppercase;
-  text-shadow: 0 4px 40px rgba(0,0,0,.45);
+.hero__inner { position: relative; z-index: 5; max-width: 100%; display: flex; flex-direction: column; align-items: center; }
+.hero__mark { display: block; width: clamp(156px, min(19.5vw, calc(30 * var(--hh))), 375px); height: auto; filter: drop-shadow(0 6px 30px rgba(0,0,0,.5)); }
+/* Colonne qui prend la largeur de « TRAITEUR » : la ligne du dessous et ses filets s'y calent */
+.hero__title { display: flex; flex-direction: column; align-items: stretch; margin-top: clamp(18px, calc(3 * var(--hh)), 44px); text-shadow: 0 2px 8px rgba(0,0,0,.35), 0 4px 40px rgba(0,0,0,.5); }
+.hero__title .ln { display: block; }
+/* Le mot qui définit l'activité : la ligne dominante, en Trirong comme les lettres de l'emblème */
+.hero__title .ln--big {
+  font: 600 clamp(34px, min(6.7vw, calc(10.5 * var(--hh))), 140px)/.95 var(--title); text-align: center;
+  letter-spacing: .14em; margin-right: -.14em; text-transform: uppercase; white-space: nowrap;
 }
-.hero--page .hero__title { font-size: clamp(44px, 8.4vw, 136px); }
-.hero__title .ln { display: block; white-space: nowrap; }
-.hero__sub {
-  position: relative; z-index: 2; margin-top: 32px; max-width: 60ch;
-  font: 500 13px/1.6 var(--sans); letter-spacing: .22em; text-transform: uppercase;
+/* Au second rang, entre deux filets corail */
+.hero__title .ln--small {
+  display: flex; align-items: center; justify-content: center; gap: clamp(12px, 1.2vw, 26px);
+  margin-top: clamp(8px, calc(1.4 * var(--hh)), 22px);
+  font: italic 400 clamp(26px, min(3.65vw, calc(6.2 * var(--hh))), 78px)/1.15 var(--serif);
 }
+.hero__title .ln--small::before, .hero__title .ln--small::after { content: ""; flex: 1 1 0; min-width: clamp(26px, 3.4vw, 76px); width: auto; height: clamp(1px, .12vw, 3px); background: var(--coral); }
+.hero__title .ln--small span { flex: none; white-space: nowrap; }
+.hero__sub { margin-top: clamp(18px, calc(2.6 * var(--hh)), 40px); color: rgba(255,238,223,.88); font: 500 clamp(12px, .45vw + 6px, 18px)/1.6 var(--sans); letter-spacing: .22em; text-transform: uppercase; }
+.hero__dot { display: inline-block; width: 5px; height: 5px; border-radius: 50%; background: var(--coral); vertical-align: middle; margin: -.2em .9em 0; }
 .hero__down {
-  position: absolute; z-index: 2; bottom: 24px; left: 50%; transform: translateX(-50%);
-  width: 44px; height: 44px; display: grid; place-items: center;
+  position: absolute; z-index: 5; bottom: clamp(20px, calc(3.6 * var(--hh)), 40px); left: 50%; transform: translateX(-50%);
+  width: 58px; height: 58px; display: grid; place-items: center;
+  border: 1px solid rgba(255,238,223,.6); border-radius: 50%;
+  color: var(--cream); background: rgba(20,16,14,.25);
+  transition: background-color .3s ease, border-color .3s ease, color .3s ease;
 }
-.hero__down span {
-  width: 1px; height: 40px; background: linear-gradient(var(--cream), transparent);
-  animation: drop 2.4s ease-in-out infinite; transform-origin: top;
+.hero__down:hover { background: var(--cream); border-color: var(--cream); color: var(--coal); }
+/* Chevron qui rebondit lentement : on comprend tout de suite qu'il faut descendre */
+.hero__down svg {
+  width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round;
+  animation: nudge 2.6s cubic-bezier(.45,0,.55,1) infinite;
 }
-@keyframes drop { 0% { transform: scaleY(0); } 50% { transform: scaleY(1); } 100% { transform: scaleY(1); opacity: 0; } }
+@keyframes nudge { 0%, 100% { transform: translateY(-3px); } 50% { transform: translateY(5px); } }
 
-.js .hero__title .ln, .js .hero__sub, .js .top { opacity: 0; transform: translateY(14px); }
-.js.is-ready .hero__title .ln, .js.is-ready .hero__sub, .js.is-ready .top {
+/* Bouton « En savoir plus » : .btn .btn--line en version claire, posé sur la vidéo */
+.hero__cta {
+  margin-top: clamp(24px, calc(3.6 * var(--hh)), 48px);
+  border-color: rgba(255,238,223,.7);
+  background: rgba(20,16,14,.22);
+  text-shadow: none;
+}
+.hero__cta:hover { background: var(--cream); border-color: var(--cream); color: var(--coal); }
+
+/* Fumée qui monte du bas du hero vers le temps I (canvas animé par fumee.js) */
+.hero__smoke {
+  position: absolute; left: 0; z-index: 4; pointer-events: none;
+  --smk: clamp(300px, 46vh, 480px);
+  width: 100%; height: var(--smk); bottom: calc(var(--smk) * -.28); /* centrée un peu sous la jonction : elle naît du charbon et monte dans le hero */
+  opacity: 0; transition: opacity 2.4s ease;
+  -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 34%, #000 62%, transparent 100%);
+  mask-image: linear-gradient(180deg, transparent 0%, #000 34%, #000 62%, transparent 100%);
+}
+.hero__smoke.is-on { opacity: 1; }
+
+/* Entrée : l'emblème, TRAITEUR, la seconde ligne, le sous-titre, puis l'en-tête */
+.js .top, .js .hero__mark, .js .hero__title .ln, .js .hero__sub, .js .hero__cta { opacity: 0; transform: translateY(16px); }
+.js.is-ready .top, .js.is-ready .hero__mark, .js.is-ready .hero__title .ln, .js.is-ready .hero__sub, .js.is-ready .hero__cta {
   opacity: 1; transform: none;
   transition: opacity 1.3s ease, transform 1.3s cubic-bezier(.2,.7,.2,1), background-color .35s ease, padding .35s ease, color .35s ease;
 }
-.js.is-ready .hero__title .ln:nth-child(2) { transition-delay: .2s; }
-.js.is-ready .hero__title .ln:nth-child(3) { transition-delay: .4s; }
-.js.is-ready .hero__sub { transition-delay: .8s; }
+.js.is-ready .top { transition-delay: .7s, .7s, 0s, 0s, 0s; }
+.js.is-ready .hero__title .ln:nth-child(1) { transition-delay: .15s; }
+.js.is-ready .hero__title .ln:nth-child(2) { transition-delay: .35s; }
+.js.is-ready .hero__sub { transition-delay: .6s; }
+.js.is-ready .hero__cta { transition-delay: .85s, .85s, 0s, 0s, 0s; }
 
 /* ---------- Phrase d'introduction centrée ---------- */
 .intro { text-align: center; }
@@ -231,7 +284,7 @@ ul, ol { padding: 0; list-style: none; }
 .tool__head .lede { margin: 22px auto 0; max-width: 30ch; }
 .tool__photo img { width: 100%; aspect-ratio: 21 / 9; object-fit: cover; object-position: center 60%; }
 .tool__grid { display: grid; grid-template-columns: 5fr 7fr; gap: clamp(40px, 6vw, 96px); margin-top: clamp(48px, 6vw, 80px); align-items: start; }
-.big400 { font: 400 clamp(54px, 7vw, 108px)/.95 var(--title); letter-spacing: .06em; color: var(--coral-ink); }
+.big400 { font: 600 clamp(54px, 7vw, 108px)/.95 var(--title); letter-spacing: .06em; color: var(--coral-ink); }
 .big400 small { display: block; margin-top: 14px; font: 400 clamp(20px, 1.8vw, 26px)/1.3 var(--serif); letter-spacing: 0; color: var(--coal); }
 .parts { border-top: 1px solid rgba(29,29,29,.18); }
 .parts div { display: grid; grid-template-columns: 12rem 1fr; gap: 16px; padding: 18px 0; border-bottom: 1px solid rgba(29,29,29,.18); }
@@ -274,6 +327,8 @@ ul, ol { padding: 0; list-style: none; }
 .frame__shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(29,29,29,.88) 0%, rgba(29,29,29,.55) 42%, rgba(29,29,29,.05) 78%); }
 .frame__text { position: relative; z-index: 2; padding-top: 90px; padding-bottom: clamp(70px, 9vw, 120px); }
 .frame__text .lede { font-size: clamp(28px, 3.3vw, 50px); max-width: 17ch; }
+.frame__text .caps + .body { margin-top: 28px; }
+.tarifs__prix { font: 400 clamp(22px, 2vw, 30px)/1.3 var(--serif); color: var(--cream); max-width: 26ch; }
 .frame__text .body { max-width: 44ch; }
 
 /* ---------- Ce qu'on mange ---------- */
@@ -400,15 +455,22 @@ ul, ol { padding: 0; list-style: none; }
 /* ---------- Mobile ---------- */
 @media (max-width: 720px) {
   body { font-size: 16px; }
-  .top { padding-top: 16px; }
-  .logo { width: 78px; }
-  .top.is-solid .logo { width: 44px; }
-  .nav { gap: 20px; margin-top: 8px; }
-  .nav a { font-size: 11px; letter-spacing: .14em; }
-  .hero { padding: 190px 16px 100px; }
-  .hero__title { font-size: clamp(36px, 12.6vw, 60px); letter-spacing: .07em; margin-right: -.07em; line-height: 1.04; }
+  .top { padding-left: 16px; padding-right: 16px; }
+  .nav a, .top.is-solid .nav a { padding: 8px 0; }
+  .hero__sub { font-size: 11.5px; letter-spacing: .16em; }
+  .hero__down { width: 50px; height: 50px; }
+  .top { padding-top: 14px; }
+  .nav { --nav-gap: 16px; padding: 2px 8px; }
+  .nav a { font-size: 11px; letter-spacing: .16em; }
+  .top.is-solid .nav a { font-size: 11px; }
+  .top.is-solid .logo { width: 40px; }
+  .top.is-solid .nav { --nav-gap: 12px; }
+  .hero { padding: 96px 16px; }
+  .hero__mark { width: min(54vw, calc(34 * var(--hh))); }
+  .hero__title .ln--big { font-size: clamp(30px, 10.6vw, 60px); letter-spacing: .06em; margin-right: -.06em; }
+  .hero__title .ln--small { font-size: clamp(19px, 6vw, 34px); gap: 10px; }
+  .hero__title .ln--small::before, .hero__title .ln--small::after { min-width: 22px; }
   .hero--page .hero__title { font-size: clamp(34px, 11vw, 54px); }
-  .hero__sub { font-size: 12px; letter-spacing: .16em; margin-top: 24px; }
   .row__photo img, .split__photo img { aspect-ratio: 4 / 5; }
   .trio, .producers, .cities { grid-template-columns: 1fr; columns: 1; }
   .trio img, .trio li:last-child img { aspect-ratio: 4 / 3; }
@@ -431,7 +493,8 @@ ul, ol { padding: 0; list-style: none; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .hero__video { display: none; }
-  .fog i, .hero__down span { animation: none !important; }
-  .js .hero__title .ln, .js .hero__sub, .js .top { opacity: 1 !important; transform: none !important; }
+  .fog i, .hero__down svg { animation: none !important; }
+  .hero__smoke { display: none; }
+  .js .top, .js .hero__mark, .js .hero__title .ln, .js .hero__sub, .js .hero__cta { opacity: 1 !important; transform: none !important; }
   .top, .logo, .logo img, .nav, .grid img, .more::before { transition: none !important; }
 }

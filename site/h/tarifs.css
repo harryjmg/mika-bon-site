@@ -1,0 +1,103 @@
+/* MC Cuisine, section #tarifs. Texte de Mika tel quel, rien d'ajouté.
+   Jonction : le temps III (la tablée) fond au charbon (moment.css) ; les tarifs s'ouvrent sur ce même charbon,
+   un brouillard traverse la frontière, et le feu monte du bas de la section. Aucune coupe nette entre deux photos.
+   Composition : sur l'axe central, comme le temps III. Le titre est le composant commun .sec-title (sections.css).
+   Trois repères en grand (25 €, 70, devis), puis une seule phrase de Mika, puis le bouton.
+
+   Échelle d'espacement : la même base --u que les temps I et III (6 px à 375, 8 px à 1440, 10 px à 2560)
+   et ses multiples x1, x2, x3, x5, x8, x13. */
+
+.tarifs {
+  --u: clamp(6px, calc(.18vw + 5.4px), 10px);
+  --t2: calc(var(--u) * 2);
+  --t3: calc(var(--u) * 3);
+  --t5: calc(var(--u) * 5);
+  --t8: calc(var(--u) * 8);
+  --t13: calc(var(--u) * 13);
+  --ref: clamp(22px, calc(1.1vw + 14px), 42px); /* taille de référence de la page */
+  position: relative; z-index: 1; /* au-dessus du bas du temps III : le brouillard déborde sur la jonction */
+  background: var(--coal);
+  display: flex; flex-direction: column; align-items: center;
+  padding: var(--t13) var(--gut) 0;
+}
+
+/* Le feu, sous le texte, sur toute la largeur ; son haut se fond dans le charbon et remonte sous le lien */
+.tarifs__img {
+  order: 2; position: relative; z-index: 1;
+  width: calc(100% + 2 * var(--gut)); max-width: none;
+  margin: calc(var(--t13) * -1) calc(-1 * var(--gut)) 0;
+  height: min(62vh, 56vw); height: min(62svh, 56vw);
+  object-fit: cover; object-position: 55% 72%;
+  filter: saturate(.9) brightness(.85);
+  -webkit-mask-image: linear-gradient(180deg, transparent 0%, rgba(0,0,0,.4) 25%, #000 60%);
+  mask-image: linear-gradient(180deg, transparent 0%, rgba(0,0,0,.4) 25%, #000 60%);
+}
+
+/* Le brouillard du site, à cheval sur la jonction : il commence dans la tablée et finit dans les tarifs */
+.tarifs__fog {
+  inset: auto 0 auto 0;
+  top: calc(var(--t13) * -2); height: calc(var(--t13) * 4);
+  z-index: 0; opacity: .7;
+  /* les deux couches débordent du conteneur : un fondu sur le conteneur évite tout bord net */
+  -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 35%, #000 60%, transparent 100%);
+  mask-image: linear-gradient(180deg, transparent 0%, #000 35%, #000 60%, transparent 100%);
+}
+
+.tarifs__text {
+  order: 1;
+  position: relative; z-index: 2;
+  width: 100%; max-width: 1280px;
+  font-size: var(--ref);
+  display: flex; flex-direction: column; align-items: center;
+  text-align: center;
+}
+
+/* Les trois repères, lisibles d'un coup d'oeil : trois colonnes égales séparées par des filets corail.
+   Les chiffres sortent de l'échelle du texte courant (ce sont des chiffres, pas des phrases). */
+.tarifs__keys {
+  width: 100%;
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.tarifs__keys li {
+  display: flex; flex-direction: column; align-items: center;
+  padding: var(--t3) var(--t3);
+}
+.tarifs__keys li + li { border-left: 1px solid rgba(227,109,84,.5); }
+.tarifs__pre,
+.tarifs__post {
+  font: 600 clamp(13px, calc(.5vw + 9px), 22px)/1.2 var(--title);
+  letter-spacing: .2em; text-transform: uppercase;
+  color: var(--coral);
+}
+.tarifs__big {
+  display: block;
+  margin-block: var(--t2);
+  font: 600 clamp(48px, calc(4.6vw + 22px), 140px)/1 var(--title);
+  letter-spacing: .02em;
+  color: var(--cream);
+  white-space: nowrap;
+  text-shadow: 0 2px 30px rgba(0,0,0,.5);
+}
+
+/* La phrase de Mika, à la taille de référence */
+.tarifs__p {
+  max-width: 30em;
+  margin-top: var(--t8);
+  font: 400 1em/1.3 var(--serif);
+  color: rgba(255,238,223,.88);
+  text-wrap: pretty;
+  text-shadow: 0 2px 24px rgba(0,0,0,.5);
+}
+
+.tarifs__btn { margin-top: var(--t5); }
+
+@media (max-width: 720px) {
+  .tarifs__img { height: auto; aspect-ratio: 4 / 3; object-position: 55% 80%; }
+  .tarifs__text { font-size: 22px; }
+  /* Mobile : les trois repères l'un sous l'autre, séparés par un filet horizontal */
+  .tarifs__keys { grid-template-columns: minmax(0, 1fr); }
+  .tarifs__keys li { padding: var(--t3) 0; }
+  .tarifs__keys li + li { border-left: 0; border-top: 1px solid rgba(227,109,84,.5); }
+  .tarifs__big { font-size: 56px; margin-block: var(--u); }
+  .tarifs__p { margin-top: var(--t5); }
+}

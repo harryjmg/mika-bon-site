@@ -1,0 +1,243 @@
+/* MC Cuisine, section #maison : trois temps en plans plein cadre.
+   I : la phrase d'ouverture et le chef, photo incrustée sur un fond vidéo. II : le fumoir. III : le moment. Texte de Mika tel quel, rien d'ajouté.
+   Les numéros I, II, III et le filet sont décoratifs (aria-hidden), sans mots.
+   Les états cachés n'existent que si maison.js a posé .maison-on : sans JS, tout est visible. */
+
+#maison { padding: 0; }
+
+/* ---------- Les trois temps ---------- */
+.temps {
+  position: relative;
+  min-height: 100vh; min-height: 100svh;
+  display: flex; align-items: flex-end;
+  overflow: hidden;
+  background: var(--coal);
+}
+.temps + .temps { margin-top: clamp(6px, .6vw, 10px); }
+.temps__img {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; object-position: var(--pos, center);
+  filter: saturate(.88) contrast(1.04) brightness(.9);
+}
+.temps__shade { position: absolute; inset: 0; pointer-events: none; }
+.temps--r .temps__shade {
+  background:
+    linear-gradient(270deg, rgba(29,29,29,.9) 0%, rgba(29,29,29,.62) 34%, rgba(29,29,29,0) 62%),
+    linear-gradient(0deg, rgba(29,29,29,.55) 0%, rgba(29,29,29,0) 40%);
+}
+.temps--tl { align-items: flex-start; }
+.temps--tl .temps__shade {
+  background:
+    linear-gradient(90deg, rgba(29,29,29,.9) 0%, rgba(29,29,29,.62) 34%, rgba(29,29,29,0) 62%),
+    linear-gradient(180deg, rgba(29,29,29,.6) 0%, rgba(29,29,29,0) 45%);
+}
+
+.temps__text {
+  position: relative; z-index: 2;
+  max-width: 1760px; /* plus large que .wrap : sur grand écran, le texte reste près du bord, dans l'ombre */
+  display: flex; flex-direction: column;
+  padding-top: 120px; padding-bottom: clamp(70px, 9vw, 130px);
+}
+.temps--r .temps__text { align-items: flex-end; }
+.temps--r .temps__text > * { width: min(100%, max(31rem, 28vw)); }
+.temps--tl .temps__text > * { width: min(100%, max(31rem, 28vw)); }
+.temps--tl .temps__text { padding-top: clamp(130px, 13vw, 190px); }
+
+.temps__num {
+  display: flex; align-items: center; gap: 18px;
+  font: 600 clamp(16px, 1.35vw, 22px)/1 var(--title);
+  letter-spacing: .3em;
+  color: var(--coral);
+  margin-bottom: clamp(22px, 2.4vw, 34px);
+}
+.temps__num::after {
+  content: ""; flex: 0 0 clamp(44px, 5vw, 72px); height: 1px;
+  background: currentColor; opacity: .7;
+  transform-origin: left;
+}
+.temps__lead {
+  font: 400 clamp(24px, 2.2vw, 42px)/1.25 var(--serif);
+  color: var(--cream);
+  text-wrap: pretty;
+  text-shadow: 0 2px 24px rgba(0,0,0,.35);
+}
+.temps .body { color: rgba(255,238,223,.88); max-width: none; }
+
+
+/* ---------- Temps I : la phrase et le chef, sur fond vidéo ----------
+   Fond : img/maison-remorque.mp4, la caméra longe la remorque en plein jour (apropos.mp4 de 7,2 à 9,6 s),
+   ralentie, floutée, en aller-retour, sans son. Un voile charbon la tient en arrière-plan.
+   Composition éditoriale : la photo (3:2, Mika ET la remorque qui fume) domine le plan, sur dix colonnes
+   sur douze, et déborde à gauche jusqu'au bord. Le grand titre mord sur le haut de la photo (bande d'arbres,
+   assombrie), le texte part à droite et mord sur le coin bas droit (l'herbe, assombrie). Le visage et le
+   fumoir restent dégagés.
+
+   Échelle d'espacement : une base --u (8 px à 1440, 6 px à 375, 10 px à 2560) et ses multiples
+   x1, x2, x3, x5, x8, x13, soit 8, 16, 24, 40, 64, 104 px à 1440. Aucune autre valeur. */
+.chef {
+  --u: clamp(6px, calc(.18vw + 5.4px), 10px);
+  --s1: var(--u);
+  --s2: calc(var(--u) * 2);
+  --s3: calc(var(--u) * 3);
+  --s4: calc(var(--u) * 5);
+  --s5: calc(var(--u) * 8);
+  --s6: calc(var(--u) * 13);
+  align-items: center;
+}
+.chef__video {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; object-position: 50% 50%;
+}
+/* Le fond est clair (plein jour) : voile charbon franc, plus dense derrière le texte, fondu en haut et en bas */
+.chef__veil {
+  position: absolute; inset: 0; z-index: 2; pointer-events: none; /* au-dessus du brouillard : il fond avec lui en bas du plan */
+  background:
+    linear-gradient(180deg, var(--coal) 0%, var(--coal) 5%, rgba(29,29,29,.75) 12%, rgba(29,29,29,0) 28%, rgba(29,29,29,0) 66%, var(--coal) 100%),
+    linear-gradient(90deg, rgba(29,29,29,.55) 0%, rgba(29,29,29,.2) 50%, rgba(29,29,29,0) 75%),
+    rgba(29,29,29,.66);
+}
+.chef .fog { z-index: 1; }
+/* Jonction avec le hero : ce plan part du charbon plein. Le brouillard et la fumée de la jonction
+   appartiennent au hero (style.css, .hero::after et .hero__smoke) et débordent ici, en une seule couche. */
+
+.chef__grid {
+  position: relative; z-index: 3;
+  max-width: 1760px; /* sur très grand écran, la composition garde son ampleur */
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--s4);
+  align-items: start;
+  /* en haut : la place du repère « Le chef » (sections.css) ; en bas : la place du texte qui descend sous la photo */
+  padding-top: calc(var(--s6) + var(--s4)); padding-bottom: calc(var(--s6) * 2 + var(--s5));
+}
+.chef__title {
+  grid-row: 1; grid-column: 1 / 9;
+  position: relative; z-index: 2;
+  margin-bottom: calc(-1 * var(--s4)); /* mord sur le haut de la photo, au-dessus de la tête de Mika */
+  font: 400 clamp(32px, calc(2.6vw + 18px), 86px)/1.08 var(--serif);
+  letter-spacing: -.012em;
+  max-width: 22ch;
+  text-wrap: balance;
+  text-shadow: 0 2px 4px rgba(0,0,0,.35), 0 2px 30px rgba(0,0,0,.55);
+}
+.chef__photo {
+  grid-row: 2; grid-column: 1 / 11;
+  position: relative; margin: 0;
+  /* déborde de la grille jusqu'au bord gauche de l'écran, même quand la grille est plafonnée (1760 px) */
+  margin-left: calc(-1 * (var(--gut) + max(0px, (100vw - 1760px) / 2)));
+  box-shadow: 0 var(--s4) var(--s6) rgba(0,0,0,.5);
+}
+.chef__photo img {
+  display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; object-position: 50% 50%;
+  filter: saturate(.92) contrast(1.04) brightness(.97);
+}
+/* Voiles locaux, seulement là où le texte passe : la bande d'arbres en haut, l'herbe en bas à droite */
+.chef__photo::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(29,29,29,.62) 0%, rgba(29,29,29,.25) 9%, rgba(29,29,29,0) 15%),
+    radial-gradient(ellipse 42% 38% at 100% 100%, rgba(29,29,29,.82) 0%, rgba(29,29,29,.5) 50%, rgba(29,29,29,0) 100%);
+}
+.chef__text {
+  grid-row: 2; grid-column: 9 / 13;
+  position: relative; z-index: 2;
+  align-self: end;
+  margin-bottom: calc(-1 * (var(--s6) + var(--s5))); /* descend sous la photo : il ne mord que sur l'herbe */
+}
+/* Les deux phrases du chef : même style, même taille (la taille de référence des sections),
+   un écart --s2 entre elles pour qu'elles se lisent comme un seul paragraphe en deux temps. */
+.chef .temps__lead,
+.chef .body {
+  font: 400 clamp(22px, calc(1.1vw + 14px), 42px)/1.3 var(--serif);
+  color: var(--cream);
+  max-width: 30ch;
+  text-wrap: pretty;
+  text-shadow: 0 1px 3px rgba(0,0,0,.5), 0 2px 24px rgba(0,0,0,.55);
+}
+.chef .body { margin-top: var(--s2); }
+
+/* Très grand écran : la taille du texte plafonne à 42 px, on lui rend une colonne de plus pour garder
+   des lignes d'environ 25 caractères ; il ne mord toujours que sur l'herbe. */
+@media (min-width: 1800px) {
+  .chef__text { grid-column: 8 / 13; }
+}
+
+/* Écran moyen et mobile : la photo passe bord à bord, en grand ; le titre au-dessus, le texte dessous,
+   qui mord un peu sur le bas de la photo (fondu en charbon) et se cale à droite. */
+@media (max-width: 1180px) {
+  .chef__grid { grid-template-columns: minmax(0, 1fr); padding-bottom: var(--s6); }
+  .chef__title { grid-column: 1; margin-bottom: var(--s4); }
+  .chef__photo { grid-column: 1; margin-inline: calc(-1 * var(--gut)); }
+  .chef__photo::after {
+    background:
+      linear-gradient(0deg, rgba(29,29,29,.95) 0%, rgba(29,29,29,.55) 14%, rgba(29,29,29,0) 30%);
+  }
+  .chef__text {
+    grid-row: 3; grid-column: 1;
+    justify-self: end; width: min(100%, 34ch);
+    margin-top: calc(-1 * var(--s5)); margin-bottom: 0;
+  }
+  .chef .temps__lead, .chef .body { max-width: none; }
+}
+
+/* ---------- Révélations : le plan se pose, le texte suit ---------- */
+.maison-on .chef__title,
+.maison-on .chef__photo,
+.maison-on .temps__num,
+.maison-on .temps__lead,
+.maison-on .temps .body { opacity: 0; transform: translateY(18px); }
+.maison-on .temps__num::after { transform: scaleX(0); }
+.maison-on .temps__img { transform: scale(1.1); }
+.maison-on .chef__photo img { transform: scale(1.08); }
+
+.maison-on .is-in .chef__title,
+.maison-on .is-in .chef__photo,
+.maison-on .is-in .temps__num,
+.maison-on .is-in .temps__lead,
+.maison-on .is-in .body {
+  opacity: 1; transform: none;
+  transition: opacity 1.4s ease, transform 1.4s cubic-bezier(.2,.7,.2,1);
+}
+.maison-on .is-in .temps__num::after { transform: none; transition: transform 1.2s cubic-bezier(.4,0,.2,1) .5s; }
+.maison-on .is-in .temps__img { transform: scale(1.02); transition: transform 3.2s cubic-bezier(.2,.6,.2,1); }
+.maison-on .chef__photo { overflow: hidden; }
+.maison-on .is-in .chef__photo img { transform: none; transition: transform 3.2s cubic-bezier(.2,.6,.2,1); }
+.maison-on .is-in .chef__photo { transition-delay: .2s; }
+.maison-on .is-in .temps__num { transition-delay: .3s; }
+.maison-on .is-in .temps__lead { transition-delay: .55s; }
+.maison-on .is-in .body { transition-delay: .8s; }
+.maison-on .is-in .body + .body { transition-delay: .95s; }
+
+/* ---------- Tablette et mobile : texte en bas du plan ---------- */
+@media (max-width: 860px) {
+  .temps { min-height: 92vh; min-height: 92svh; }
+  .temps--r .temps__shade {
+    background: linear-gradient(0deg, rgba(29,29,29,.96) 0%, rgba(29,29,29,.82) 34%, rgba(29,29,29,.2) 62%, rgba(29,29,29,0) 78%);
+  }
+  .temps--tl .temps__shade {
+    background: linear-gradient(180deg, rgba(29,29,29,.96) 0%, rgba(29,29,29,.82) 34%, rgba(29,29,29,.2) 58%, rgba(29,29,29,0) 70%);
+  }
+  .temps--tl .temps__text { padding-top: 110px; }
+  .temps--r .temps__text { align-items: flex-start; }
+  .temps__img { object-position: var(--pos-m, var(--pos, center)); }
+  .temps__text { padding-bottom: 56px; }
+
+  /* Temps I : la photo en 4:3 pour qu'elle soit grande sur un écran étroit, Mika et la remorque entiers ;
+     le texte prend toute la largeur et mord moins sur la photo */
+  .chef__photo img { aspect-ratio: 4 / 3; object-position: 30% 50%; }
+  .chef__text { justify-self: stretch; width: auto; margin-top: calc(-1 * var(--s4)); }
+  .chef { min-height: 0; } /* le plan prend la hauteur de son contenu, sans vide sous le texte */
+}
+@media (max-width: 720px) {
+  .temps__lead { font-size: clamp(22px, 6.2vw, 28px); }
+  .temps__num { letter-spacing: .26em; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .maison-on .chef__title, .maison-on .chef__photo, .maison-on .chef__photo img,
+  .maison-on .temps__num, .maison-on .temps__lead, .maison-on .temps .body,
+  .maison-on .temps__num::after, .maison-on .temps__img {
+    opacity: 1 !important; transform: none !important; transition: none !important;
+  }
+  /* La vidéo n'est jamais lancée (maison.js) : son poster reste en fond. */
+}

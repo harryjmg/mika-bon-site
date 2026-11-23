@@ -27,9 +27,8 @@
   }
 
   /* Formulaire : ouvre WhatsApp ou un e-mail déjà écrit */
-  // À REMPLACER : numéro et adresse réels
-  const WA = '33600000000';
-  const MAIL = 'contact@mccuisine.fr';
+  const WA = '33767207613';
+  const MAIL = 'contact@mc-cuisine.fr';
   const form = document.getElementById('quote-form');
   const err = document.getElementById('form-error');
 

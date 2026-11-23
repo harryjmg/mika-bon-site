@@ -1,0 +1,139 @@
+/* MC Cuisine, section #maison, temps II : le fumoir.
+   Son propre plan : un fond de nuit bleue (la couleur du ciel de la photo), la photo en insert qui file
+   jusqu'au bord droit, le texte de Mika à gauche dans le noir, et un gros plan de la machine
+   dans la fumée (fumee.jpg) posé à cheval sur le coin de la photo.
+   Le chiffre II et son filet sont décoratifs (aria-hidden).
+   Les états cachés n'existent que si fumoir.js a posé .fumoir-on : sans JS, tout est visible. */
+
+.fumoir {
+  --night: #101820;
+  --fgap: clamp(40px, 5.5vw, 110px);              /* entre le texte et la photo */
+  --dw: clamp(150px, 14vw, 330px);                /* largeur du détail du foyer */
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, var(--coal) 0%, var(--night) 22%, var(--night) 72%, var(--coal) 100%);
+  padding: clamp(110px, 10vw, 190px) 0 calc(clamp(90px, 9vw, 170px) + var(--dw) * .45);
+}
+/* La lueur du foyer qui déborde dans la nuit, derrière le détail */
+.fumoir__glow {
+  position: absolute; pointer-events: none;
+  left: 18%; bottom: -10%; width: min(70vw, 1300px); aspect-ratio: 1;
+  background: radial-gradient(closest-side, rgba(227,109,84,.17), rgba(181,86,43,.06) 55%, rgba(181,86,43,0));
+}
+
+.fumoir__grid {
+  position: relative; z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 4fr) minmax(0, 7fr);
+  grid-template-areas: "text photo";
+  column-gap: var(--fgap);
+  padding-left: var(--gut);                      /* à droite, la photo va jusqu'au bord */
+}
+
+/* ---------- Le texte, dans le noir ---------- */
+.fumoir__text { grid-area: text; align-self: center; min-width: 0; }
+.fumoir__num {
+  display: flex; align-items: center; gap: 18px;
+  font: 600 clamp(16px, 1.35vw, 22px)/1 var(--title);
+  letter-spacing: .3em;
+  color: var(--coral);
+  margin-bottom: clamp(22px, 2.4vw, 34px);
+  margin-right: calc(-1 * var(--fgap));          /* le filet court jusqu'à la photo */
+}
+.fumoir__num::after {
+  content: ""; flex: 1 1 auto; height: 1px;
+  background: linear-gradient(90deg, currentColor, rgba(227,109,84,.25));
+  opacity: .7;
+  transform-origin: left;
+}
+.fumoir__lead {
+  font: 400 clamp(24px, 2.2vw, 42px)/1.25 var(--serif);
+  color: var(--cream);
+  max-width: 18em;
+  text-wrap: pretty;
+}
+
+/* ---------- La photo en insert ---------- */
+.fumoir__photo {
+  grid-area: photo; margin: 0; position: relative;
+  overflow: hidden;
+  box-shadow: 0 40px 100px rgba(0,0,0,.5);
+}
+.fumoir__photo img {
+  width: 100%; aspect-ratio: 1678 / 937; object-fit: cover; object-position: 40% 60%;
+}
+
+/* ---------- Le gros plan : la machine dans la fumée (fumee.jpg) ----------
+   Cadré en 4:5 sur le couvercle de droite, son thermomètre et sa poignée en bois ; assombri pour tenir dans la nuit bleue. */
+.fumoir__detail {
+  grid-area: photo; align-self: end; justify-self: start;
+  position: relative; z-index: 2;
+  width: var(--dw); aspect-ratio: 4 / 5;
+  margin: 0 0 calc(var(--dw) * -.45) calc(var(--fgap) * -.7);
+  overflow: hidden;
+  outline: clamp(5px, .5vw, 9px) solid var(--night);
+  box-shadow: 0 24px 60px rgba(0,0,0,.6), 0 0 80px rgba(227,109,84,.12);
+}
+.fumoir__detail img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: 100% 55%;
+  transform: scale(1.35); transform-origin: 72% 68%;   /* serré sur la poignée et le thermomètre */
+  filter: brightness(.74) saturate(.9) contrast(1.1);
+}
+
+/* ---------- Révélation : la photo glisse, le détail monte, le texte suit ---------- */
+.fumoir-on .fumoir__photo,
+.fumoir-on .fumoir__detail,
+.fumoir-on .fumoir__num,
+.fumoir-on .fumoir__lead { opacity: 0; }
+.fumoir-on .fumoir__photo { transform: translateX(40px); }
+.fumoir-on .fumoir__photo img { transform: scale(1.06); }
+.fumoir-on .fumoir__detail { transform: translateY(40px); }
+.fumoir-on .fumoir__num,
+.fumoir-on .fumoir__lead { transform: translateY(18px); }
+.fumoir-on .fumoir__num::after { transform: scaleX(0); }
+
+.fumoir-on.is-in .fumoir__photo,
+.fumoir-on.is-in .fumoir__detail,
+.fumoir-on.is-in .fumoir__num,
+.fumoir-on.is-in .fumoir__lead {
+  opacity: 1; transform: none;
+  transition: opacity 1.4s ease, transform 1.4s cubic-bezier(.2,.7,.2,1);
+}
+.fumoir-on.is-in .fumoir__photo img { transform: none; transition: transform 3.2s cubic-bezier(.2,.6,.2,1); }
+.fumoir-on.is-in .fumoir__num { transition-delay: .3s; }
+.fumoir-on.is-in .fumoir__num::after { transform: none; transition: transform 1.4s cubic-bezier(.4,0,.2,1) .7s; }
+.fumoir-on.is-in .fumoir__lead { transition-delay: .5s; }
+.fumoir-on.is-in .fumoir__detail { transition-delay: .9s; }
+
+/* ---------- Tablette et mobile : le texte, puis la photo qui file au bord droit ---------- */
+@media (max-width: 860px) {
+  .fumoir {
+    --dw: clamp(120px, 34vw, 230px);
+    padding-top: clamp(80px, 16vw, 120px);
+    padding-bottom: calc(64px + var(--dw) * .45);
+  }
+  .fumoir__grid {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "text" "photo";
+    row-gap: clamp(36px, 8vw, 56px);
+  }
+  .fumoir__text { padding-right: var(--gut); }
+  .fumoir__num { margin-right: calc(-1 * var(--gut)); }
+  .fumoir__photo img { aspect-ratio: 4 / 3; object-position: 32% 60%; }
+  /* À droite, sur les roues et l'herbe, pour ne pas cacher Mika */
+  .fumoir__detail { justify-self: end; margin-left: 0; margin-right: var(--gut); }
+  .fumoir__glow { left: -20%; width: 120vw; }
+}
+@media (max-width: 720px) {
+  .fumoir__lead { font-size: clamp(22px, 6.2vw, 28px); }
+  .fumoir__num { letter-spacing: .26em; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fumoir-on .fumoir__photo, .fumoir-on .fumoir__photo img, .fumoir-on .fumoir__detail,
+  .fumoir-on .fumoir__num, .fumoir-on .fumoir__num::after, .fumoir-on .fumoir__lead {
+    opacity: 1 !important; transform: none !important; transition: none !important;
+  }
+}

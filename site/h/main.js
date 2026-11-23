@@ -1,4 +1,4 @@
-/* MC Cuisine, direction H : script commun aux quatre pages */
+/* MC Cuisine, direction H : page unique à liens ancre */
 (() => {
   const root = document.documentElement;
   root.classList.add('js');
@@ -21,12 +21,29 @@
   const top = document.querySelector('.top');
   const hero = document.querySelector('.hero');
   const onScroll = () => {
-    const limit = hero ? hero.offsetHeight - 140 : 40;
+    const limit = 60; // barre crème dès qu'on défile : la nav ne flotte jamais sur le titre du hero
     top.classList.toggle('is-solid', window.scrollY > limit);
   };
   window.addEventListener('scroll', onScroll, { passive: true });
   window.addEventListener('resize', onScroll);
   onScroll();
+
+  /* ---------- Navigation : souligne la section en cours ---------- */
+  const links = [...document.querySelectorAll('.nav a[href^="#"]')];
+  // Le hero est suivi aussi : quand il est au milieu de l'écran, aucun lien n'est souligné
+  const targets = [document.querySelector('.hero'), ...links.map(a => document.querySelector(a.getAttribute('href')))].filter(Boolean);
+  if (targets.length && 'IntersectionObserver' in window) {
+    const spy = new IntersectionObserver(entries => {
+      entries.forEach(en => {
+        if (!en.isIntersecting) return;
+        links.forEach(a => {
+          if (a.getAttribute('href') === '#' + en.target.id) a.setAttribute('aria-current', 'true');
+          else a.removeAttribute('aria-current');
+        });
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    targets.forEach(t => spy.observe(t));
+  }
 
   /* ---------- Brouillard : une texture dessinée une fois, que le CSS fait dériver ---------- */
   const makeFog = () => {
@@ -65,13 +82,12 @@
     }
   }
 
-  /* ---------- Formulaire (page Contact) : WhatsApp ou e-mail pré-rempli ---------- */
+  /* ---------- Formulaire (section Contact) : WhatsApp ou e-mail pré-rempli ---------- */
   const form = document.getElementById('quote-form');
   if (!form) return;
   const err = document.getElementById('form-error');
-  // À REMPLACER : numéro et adresse réels
-  const WA = '33600000000';
-  const MAIL = 'contact@mccuisine.fr';
+  const WA = '33767207613';
+  const MAIL = 'contact@mc-cuisine.fr';
 
   form.addEventListener('submit', e => {
     e.preventDefault();

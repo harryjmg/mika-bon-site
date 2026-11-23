@@ -1,4 +1,6 @@
-# Publie le dossier site/ sur GitHub Pages à chaque push sur main.
+# Publie le site de MC Cuisine sur GitHub Pages (domaine mc-cuisine.fr) à chaque push sur main.
+# Le site en ligne est la direction H : son dossier site/h passe à la racine, avec seulement
+# les images et vidéos qu'il utilise. Les autres directions (a à i) restent dans le dépôt, hors ligne.
 name: Publier le site
 on:
   push:
@@ -20,8 +22,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/configure-pages@v5
+      - name: Assembler le site de production
+        run: bash scripts/build-site.sh _site
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: site
+          path: _site
       - id: deployment
         uses: actions/deploy-pages@v4
