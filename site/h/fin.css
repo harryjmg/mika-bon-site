@@ -1,17 +1,46 @@
-/* MC Cuisine, fin de page : devis, questions, mosaïque, pied de page.
-   Défaut corrigé : dans chaque .fog, la seconde couche (top 25 %, hauteur 90 %) déborde de 15 % sous sa section.
-   Son fondu tombe hors du cadre, et overflow: hidden la coupe en pleine opacité : le bas du devis finissait
-   en gris (60) quand le haut des questions repartait du charbon (31). Une marche nette sur toute la largeur.
-   Correction : un fondu posé sur le conteneur du brouillard, qui ramène chaque section au charbon pur à ses
-   deux bords. Les fonds se raccordent sans marche. Et un seul padding entre devis et questions au lieu de deux. */
+/* MC Cuisine, fin de page : bon à savoir, devis, mosaïque, pied de page.
+
+   Ordre (24/11/2026) : tarifs, puis « Bon à savoir » (la FAQ), puis « Demander un devis » (le formulaire).
+   Avant, devis et FAQ avaient la même structure (grand titre à gauche, contenu à droite, même brouillard)
+   et la FAQ renvoyait au formulaire qu'on venait de passer. Maintenant :
+   - la FAQ est une colonne centrée, sans brouillard ni bouton, qui sort du charbon des tarifs ;
+   - le devis garde la grille deux colonnes et le brouillard ; c'est le seul bloc à formulaire ;
+   - les deux titres reprennent le repère commun .sec-title (sections.css), posé dans le flux.
+
+   Brouillard : dans chaque .fog, la seconde couche (top 25 %, hauteur 90 %) déborde de 15 % sous sa section,
+   et overflow: hidden la coupe en pleine opacité, d'où une marche nette. Un fondu posé sur le conteneur
+   ramène chaque section au charbon pur à ses deux bords. */
 
 #contact > .fog,
-.fin-faq > .fog,
 .foot > .fog {
   -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 22%, #000 78%, transparent 100%);
   mask-image: linear-gradient(180deg, transparent 0%, #000 22%, #000 78%, transparent 100%);
 }
 
-/* Un seul espace entre le formulaire et les questions : la moitié du padding commun de chaque côté */
-#contact.pad { padding-bottom: calc(clamp(90px, 11vw, 160px) / 2); }
-.fin-faq.pad { padding-top: calc(clamp(90px, 11vw, 160px) / 2); }
+/* Le repère de section, dans le flux plutôt qu'en absolu sur une photo */
+.sec-title--flow {
+  position: relative; top: auto; z-index: 2;
+  margin: 0 0 clamp(40px, 4.5vw, 72px);
+  text-shadow: none;
+}
+
+/* ---------- Bon à savoir : une colonne centrée ---------- */
+.fin-faq { padding: clamp(64px, 7vw, 112px) 0 0; }
+.fin-faq .faq {
+  display: block;
+  max-width: calc(780px + 2 * var(--gut));
+}
+
+/* ---------- Demander un devis ---------- */
+#contact.pad { padding-top: clamp(96px, 10vw, 150px); }
+#contact .quote__intro .lede { margin-top: 0; }
+#contact .direct { margin-top: 28px; }
+
+/* ---------- Boutons : une seule famille, celle du hero et des tarifs ----------
+   Coins de 6 px partout. Plein corail : l'action finale (envoyer). Liseré corail : l'alternative. */
+.form__actions .btn { border-radius: 6px; }
+.btn--alt {
+  border-color: var(--coral);
+  background: rgba(20,16,14,.22);
+}
+.btn--alt:hover, .btn--alt:focus-visible { background: var(--coral); border-color: var(--coral); color: var(--white); }

@@ -16,13 +16,13 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Trirong:ital,wght@0,500;0,600;0,700;1,400&family=Castoro:ital@0;1&family=Jost:wght@400;500&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="../img/ouverture-aube-poster.jpg" fetchpriority="high">
-<link rel="stylesheet" href="style.css?v=19">
+<link rel="stylesheet" href="style.css?v=25">
 <link rel="stylesheet" href="maison.css?v=23">
 <link rel="stylesheet" href="fumoir.css?v=11">
 <link rel="stylesheet" href="moment.css?v=13">
 <link rel="stylesheet" href="tarifs.css?v=8">
 <link rel="stylesheet" href="sections.css?v=1">
-<link rel="stylesheet" href="fin.css?v=1">
+<link rel="stylesheet" href="fin.css?v=2">
 <script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
@@ -130,12 +130,39 @@
   </section>
 
 
+  <!-- BON À SAVOIR (FAQ) : placé avant le devis, pour lever les questions pratiques juste avant le formulaire.
+       Une colonne centrée, sans brouillard ni bouton : le formulaire suit directement (CSS dans fin.css) -->
+  <section class="dark fin-faq" id="questions" aria-labelledby="faq-title">
+    <h2 class="sec-title sec-title--flow" id="faq-title">Bon à savoir</h2>
+    <div class="wrap faq">
+      <div class="faq__list">
+        <details>
+          <summary>De quoi avez-vous besoin sur place&nbsp;?</summary>
+          <p>Une place plane pour la remorque, accessible en voiture. Le smoker cuit au bois. Pour l'eau et l'électricité, on vérifie ensemble au moment du devis.</p>
+        </details>
+        <details>
+          <summary>Et s'il pleut&nbsp;?</summary>
+          <p>Le smoker cuit sous la pluie. Pour le service, il faut un abri&nbsp;: tente, barnum ou préau. On le prévoit ensemble.</p>
+        </details>
+        <details>
+          <summary>Végétariens, allergies&nbsp;?</summary>
+          <p>Dites-le dès votre demande. Le chef en tient compte dans le menu.</p>
+        </details>
+        <details>
+          <summary>Combien ça coûte&nbsp;?</summary>
+          <!-- Tarifs donnés par Harry le 23/11/2026 -->
+          <p>Ticket moyen entre 25 et 40&nbsp;€ par personne. Plus le nombre de convives augmente, plus les tarifs baissent. De 70 à 600 personnes.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
   <!-- CONTACT -->
   <section class="dark fogged pad" id="contact" aria-labelledby="devis-title">
     <div class="fog" aria-hidden="true"><i></i><i></i></div>
+    <h2 class="sec-title sec-title--flow" id="devis-title">Demander un devis</h2>
     <div class="wrap quote__grid">
       <div class="quote__intro">
-        <h2 class="caps" id="devis-title">Votre devis</h2>
         <!-- À CONFIRMER : délai de réponse -->
         <p class="lede lede--sm">Quelques informations suffisent pour un premier prix. Réponse sous 48 heures.</p>
         <ul class="direct">
@@ -187,7 +214,7 @@
         <p class="form__error" id="form-error" role="alert" hidden></p>
         <div class="form__actions">
           <button class="btn btn--coral" type="submit" data-channel="whatsapp">Envoyer par WhatsApp</button>
-          <button class="btn btn--line" type="submit" data-channel="mail">Envoyer par e-mail</button>
+          <button class="btn btn--line btn--alt" type="submit" data-channel="mail">Envoyer par e-mail</button>
         </div>
         <p class="form__note">Le bouton ouvre WhatsApp ou votre messagerie avec la demande déjà écrite. Il ne reste qu'à l'envoyer.</p>
       </form>
@@ -195,36 +222,6 @@
   </section>
 
 
-
-  <!-- FAQ -->
-  <section class="dark fogged pad fin-faq" aria-labelledby="faq-title">
-    <div class="fog" aria-hidden="true"><i></i><i></i></div>
-    <div class="wrap faq">
-      <div>
-        <h2 class="caps" id="faq-title">Questions</h2>
-        <a class="btn btn--coral" href="#contact">Demander un devis</a>
-      </div>
-      <div class="faq__list">
-        <details>
-          <summary>De quoi avez-vous besoin sur place&nbsp;?</summary>
-          <p>Une place plane pour la remorque, accessible en voiture. Le smoker cuit au bois. Pour l'eau et l'électricité, on vérifie ensemble au moment du devis.</p>
-        </details>
-        <details>
-          <summary>Et s'il pleut&nbsp;?</summary>
-          <p>Le smoker cuit sous la pluie. Pour le service, il faut un abri&nbsp;: tente, barnum ou préau. On le prévoit ensemble.</p>
-        </details>
-        <details>
-          <summary>Végétariens, allergies&nbsp;?</summary>
-          <p>Dites-le dès votre demande. Le chef en tient compte dans le menu.</p>
-        </details>
-        <details>
-          <summary>Combien ça coûte&nbsp;?</summary>
-          <!-- Tarifs donnés par Harry le 23/11/2026 -->
-          <p>Ticket moyen entre 25 et 40&nbsp;€ par personne. Plus le nombre de convives augmente, plus les tarifs baissent. De 70 à 600 personnes.</p>
-        </details>
-      </div>
-    </div>
-  </section>
 
   <!-- Mosaïque : 8 photos choisies par Harry le 23/11/2026 (img/mosaique-1 à 8), sans texte -->
   <section class="wall" style="padding: 0" aria-label="Photos d'un événement MC Cuisine">
@@ -256,7 +253,6 @@
       <p>Anglet, Pays basque</p>
       <!-- Coordonnées données par Mika le 23/11/2026 -->
       <p><a href="tel:+33767207613">07 67 20 76 13</a><br><a href="mailto:contact@mc-cuisine.fr">contact@mc-cuisine.fr</a><br><a href="https://www.instagram.com/mccuisinebbq/" rel="noopener">Instagram @MccuisineBBQ</a></p>
-      <a class="btn btn--coral btn--sm" href="#contact">Demander un devis</a>
     </div>
     <nav class="foot__links" aria-label="Sections">
       <h2 class="foot__h">Sur la page</h2>
@@ -277,7 +273,7 @@
 
 <script src="main.js?v=8" defer></script>
 <script src="maison.js?v=2" defer></script>
-<script src="fumee.js?v=8" defer></script>
+<script src="fumee.js?v=27" defer></script>
 <script src="fumoir.js?v=2" defer></script>
 </body>
 </html>
