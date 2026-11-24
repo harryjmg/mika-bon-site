@@ -335,7 +335,7 @@
      Les réglages agissent en direct, restent en mémoire dans ce navigateur, et « Copier » donne la ligne
      SMOKE à recopier dans ce fichier. */
   const tuner = (P, placeBox) => {
-    const KEY = 'fumee-e-reglages';
+    const KEY = 'fumee-e-reglages-2'; // nouvelle clé : repart des réglages inscrits dans SMOKE
     const BASE = { ...P };
     try { Object.assign(P, JSON.parse(localStorage.getItem(KEY) || '{}')); } catch (e) {}
     const save = () => { try { localStorage.setItem(KEY, JSON.stringify(P)); } catch (e) {} };
